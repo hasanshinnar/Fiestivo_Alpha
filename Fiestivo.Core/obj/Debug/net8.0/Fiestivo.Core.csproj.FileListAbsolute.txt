@@ -1,0 +1,35 @@
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.deps.json
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.dll
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.pdb
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.AssemblyInfoInputs.cache
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.AssemblyInfo.cs
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.csproj.CoreCompileInputs.cache
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.dll
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\refint\Fiestivo.Core.dll
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.pdb
+C:\Users\moham\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\ref\Fiestivo.Core.dll
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.deps.json
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.dll
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.pdb
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.AssemblyInfoInputs.cache
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.AssemblyInfo.cs
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.csproj.CoreCompileInputs.cache
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.dll
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\refint\Fiestivo.Core.dll
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.pdb
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\ref\Fiestivo.Core.dll
+C:\Users\osamb\OneDrive\Desktop\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.csproj.AssemblyReference.cache
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.deps.json
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.dll
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\bin\Debug\net8.0\Fiestivo.Core.pdb
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.csproj.AssemblyReference.cache
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.AssemblyInfoInputs.cache
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.AssemblyInfo.cs
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.csproj.CoreCompileInputs.cache
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.dll
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\refint\Fiestivo.Core.dll
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\Fiestivo.Core.pdb
+C:\Users\moham\OneDrive\Desktop\Fiestivoحفظ الحدث شغال بس مش منيح\Fiestivo\Fiestivo.Core\obj\Debug\net8.0\ref\Fiestivo.Core.dll

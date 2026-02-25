@@ -1,0 +1,119 @@
+{
+  "version": 2,
+  "dgSpecHash": "hs0iv7MUWro=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore (>= 8.0.15)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.Identity.EntityFrameworkCore (>= 8.0.15)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.Identity.UI (>= 8.0.15)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.AspNetCore.Identity.UI",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.15)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.EntityFrameworkCore.Tools (>= 8.0.15)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.EntityFrameworkCore.Tools",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.Mvc.Core (>= 2.3.0)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Ref (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.NETCore.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.WindowsDesktop.App.Ref (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Host.win-x64 (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "filePath": "C:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo\\Fiestivo.csproj",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

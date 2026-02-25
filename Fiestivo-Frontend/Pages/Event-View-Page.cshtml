@@ -1,0 +1,326 @@
+@page
+@model Fiestivo.Pages.Event_View_PageModel
+@{
+    Layout = "_Layout";
+
+    // أضف هذا الكود هنا
+    var isBooked = Model.IsBooked;
+    var buttonClass = isBooked ? "View_button View_button--outline" : "View_button View_button--primary";
+    var buttonText = isBooked ? "Cancel Booking" : "Book Now";
+    var buttonIcon = isBooked ? "fas fa-times" : "fas fa-ticket-alt";
+}
+
+<div class="View_event-header mb-5">
+    <div class="container text-center">
+        <h1 class="display-5 fw-bold">@Model.Event.Event_Title</h1>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+            <span class="View_badge bg-light text-dark me-2">
+                <i class="fas fa-calendar-day me-1"></i>
+                @Model.Event.Event_Date.ToString("MMMM dd, yyyy")
+            </span>
+            <span class="View_badge bg-light text-dark">
+                <i class="fas fa-users me-1"></i>
+                @Model.Event.Attendees_Number attending
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container mb-5">
+    <div class="row">
+        <!-- Left Column - Event Image -->
+        <div class="col-lg-8 mb-4">
+            <img src="data:image;base64,@Convert.ToBase64String(Model.Event.Event_Picture)"
+                 alt="@Model.Event.Event_Title" class="img-fluid View_event-image w-100">
+        </div>
+
+        <!-- Right Column - Event Actions -->
+        <div class="col-lg-4 mb-4">
+            <div class="View_card View_card--event">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <a href="/Categories-Page?categoryId=@Model.Event.Category_ID">
+                            <span class="View_badge View_badge--category">@Model.Event.Category.Category_Name</span>
+                        </a>
+                    </div>
+
+                    <h3 class="card-title">@Model.Event.Event_Title</h3>
+                    <p class="View_text--muted">Hosted by <a href="#" class="text-decoration-none">@Model.Event.User._User_Name</a></p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="View_rating me-2">
+                            @{
+                                var fullStars = (int)Model.AverageRating;
+                                var hasHalfStar = Model.AverageRating - fullStars >= 0.5m;
+                            }
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= fullStars)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                                else if (i == fullStars + 1 && hasHalfStar)
+                                {
+                                    <i class="fas fa-star-half-alt"></i>
+                                }
+                                else
+                                {
+                                    <i class="far fa-star"></i>
+                                }
+                            }
+                        </div>
+                        <span class="View_text--muted">@Model.AverageRating.ToString("0.00") (@Model.ReviewCount reviews)</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5><i class="fas fa-info-circle me-2"></i> About This Event</h5>
+                        <p class="card-text">@Model.Event.Event_Discription</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5><i class="fas fa-clock me-2"></i> Date & Time</h5>
+                        <p class="mb-1">@Model.Event.Event_Date.ToString("ddd, MMM dd, yyyy")</p>
+                        <p class="View_text--muted">@Model.Event.Event_time.ToString(@"hh\:mm")</p>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        @if (Model.IsCreator)
+                        {
+                            <button class="View_button View_button--danger" onclick="deleteEvent(@Model.Event.Event_ID)">
+                                <i class="fas fa-trash me-2"></i> Delete Event
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="@buttonClass" id="bookingButton"
+                                    onclick="handleBooking(@Model.Event.Event_ID, @isBooked.ToString().ToLower())">
+                                <i class="@buttonIcon me-2"></i> @buttonText
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Section -->
+    <div class="row mt-4">
+        <div class="col-lg-8">
+            <div class="View_card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title mb-4"><i class="fas fa-info-circle me-2"></i> Event Details</h4>
+
+                    <div class="mb-4">
+                        <h5><i class="fas fa-map-marker-alt me-2"></i> Event Location</h5>
+                        <p class="mb-1">@Model.Event.Event_Location</p>
+                        <p class="View_text--muted">@Model.Event.Event_Location_Details</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5><i class="fas fa-info-circle me-2"></i> Additional Information</h5>
+                        <p>Event duration: @Model.Event.Event_Duration hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="View_card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4"><i class="fas fa-star me-2"></i> Reviews</h4>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (!Model.Event.Reviews.Any(r => r._User_ID == int.Parse(User.FindFirst("UserId").Value)))
+                        {
+                            <!-- Review Form -->
+                            <div class="View_card mb-4">
+                                <div class="card-body">
+                                    <h5>Leave a Review</h5>
+                                    <form method="post" class="review-form">
+                                        <input type="hidden" asp-for="NewReview.Event_ID" value="@Model.Event.Event_ID" />
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Rating</label>
+                                            <div class="View_rating rating--selectable">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    <i class="far fa-star" data-rating="@i"></i>
+                                                }
+                                            </div>
+                                            <input type="hidden" asp-for="NewReview.Rating" id="selectedRating" value="0" />
+                                            <span asp-validation-for="NewReview.Rating" class="text-danger rating-error"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label asp-for="NewReview.Comment" class="form-label">Your Review</label>
+                                            <textarea asp-for="NewReview.Comment" class="form-control" rows="3" required placeholder="Share your experience..."></textarea>
+                                            <span asp-validation-for="NewReview.Comment" class="text-danger"></span>
+                                        </div>
+
+                                        <button type="submit" class="View_button View_button--primary">Submit Review</button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-info">
+                                You've already submitted a review for this event.
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-info">
+                            Please <a href="/Login">login</a> to leave a review.
+                        </div>
+                    }
+
+                    <!-- Review List -->
+                    @if (Model.Event.Reviews != null && Model.Event.Reviews.Any())
+                    {
+                        foreach (var review in Model.Event.Reviews)
+                        {
+                            <div class="View_review View_card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5 class="card-title">Review by @review.User._User_Name</h5>
+                                            <div class="View_rating mb-2">
+                                                @for (int i = 1; i <= 5; i++)
+                                                {
+                                                    if (i <= review.Rating)
+                                                    {
+                                                        <i class="fas fa-star"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="far fa-star"></i>
+                                                    }
+                                                }
+                                                <span>(@review.Rating.ToString("0.0"))</span>
+                                            </div>
+                                        </div>
+                                        <small class="View_text--muted">Posted on @review.Review_Date.ToString("MMM dd, yyyy")</small>
+                                    </div>
+                                    <p class="card-text">@review.Comment</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No reviews yet. Be the first to review!</p>
+                    }
+
+                    <div class="text-center mt-4">
+                        <button class="View_button View_button--outline">Load More Reviews</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column - Additional Info -->
+        <div class="col-lg-4">
+            <div class="View_card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4"><i class="fas fa-users me-2"></i> Organizer</h4>
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="@(Model.Event.User.ProfilePicture != null ? $"data:image;base64,{Convert.ToBase64String(Model.Event.User.ProfilePicture)}" : "/img/LoginSignup-Page-imgs/default_image.png")" class="organizer-image" alt="Organizer">
+                        <div>
+                            <h5 class="mb-0">@Model.Event.User._User_Name</h5>
+                            <p class="View_text--muted mb-0">@Model.Event.User.Full_Name</p>
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Event.User.Bio))
+                    {
+                        <p class="card-text">@Model.Event.User.Bio</p>
+                    }
+                    <a href="mailto:@Model.Event.User.User_Email"><button class="View_button View_button--outline w-100"><i class="fas fa-envelope me-2"></i> Send E-mail</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        // تأكد من وجود دوال الجافاسكريبت هنا
+        async function bookEvent() {
+            try {
+                const response = await fetch('?handler=BookEvent', {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                });
+
+                if (response.ok) {
+                    location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function cancelBooking() {
+            try {
+                const response = await fetch('?handler=CancelBooking', {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                });
+
+                if (response.ok) {
+                    location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        async function handleBooking(eventId, isBooked) {
+             try {
+                 const handler = isBooked ? 'CancelBooking' : 'BookEvent';
+                 const response = await fetch(`?handler=${handler}&id=${eventId}`, {
+                     method: 'POST',
+                     headers: {
+                         'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                     }
+                 });
+
+                 if (response.ok) {
+                     location.reload(); // إعادة تحميل الصفحة لتحديث الحالة
+                 }
+             } catch (error) {
+                 console.error('Error:', error);
+             }
+         }
+         async function deleteEvent(eventId) {
+            if (confirm('Are you sure you want to delete this event?')) {
+                try {
+                    const response = await fetch(`?handler=DeleteEvent&id=${eventId}`, {
+                        method: 'POST',
+                        headers: {
+                            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                        }
+                    });
+
+                    if (response.ok) {
+                        window.location.href = '/User-Profile-Page';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+        }
+            document.querySelectorAll(".rating--selectable i").forEach(star => {
+            star.addEventListener("click", function () {
+                const rating = this.getAttribute("data-rating");
+                document.getElementById("selectedRating").value = rating;
+
+                document.querySelectorAll(".rating--selectable i").forEach(s => {
+                    s.classList.remove("fas", "far");
+                    s.classList.add(s.getAttribute("data-rating") <= rating ? "fas" : "far");
+                });
+            });
+        });
+    </script>
+}

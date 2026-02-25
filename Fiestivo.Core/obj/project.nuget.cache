@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "dgSpecHash": "JyCKLnz/LPo=",
+  "success": false,
+  "projectFilePath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.Mvc.Core (>= 2.3.0)' for 'net8.0'.",
+      "projectPath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "filePath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Ref (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "filePath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "libraryId": "Microsoft.NETCore.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.WindowsDesktop.App.Ref (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "filePath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 8.0.24)' for 'net8.0'.",
+      "projectPath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "filePath": "c:\\Users\\PC\\Documents\\Fiestivo\\Fiestivo\\Fiestivo.Core\\Fiestivo.Core.csproj",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

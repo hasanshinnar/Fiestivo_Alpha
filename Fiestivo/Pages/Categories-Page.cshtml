@@ -1,0 +1,80 @@
+﻿@page
+@model Fiestivo.Pages.Categories_PageModel
+@{
+}
+@{
+    Layout = "_Layout";
+}
+<main class="Categories_events">
+    <h1 class="Categories_events__title">@Model.CategoryName Events</h1>
+
+    @if (Model.Events != null && Model.Events.Any())
+    {
+        <div class="Categories_events__grid">
+            @foreach (var eventItem in Model.Events)
+            {
+                <article class="Categories_event-card">
+                    <div class="Categories_event-card__image"
+                         style="background-image: url('data:image;base64,@Convert.ToBase64String(eventItem.Event_Picture)')"></div>
+                    <div class="Categories_event-card__content">
+                        <div class="Categories_event-card__details">
+                            <h3 class="Categories_event-card__title">@eventItem.Event_Title</h3>
+                            <div class="Categories_event-card__info">
+                                <span class="Categories_event-card__info-item">
+                                    <i class="fas fa-map-marker-alt Categories_event-card__info-icon"></i>
+                                    @eventItem.Event_Location
+                                </span>
+                                <span class="Categories_event-card__info-item">
+                                    <i class="fas fa-calendar-alt Categories_event-card__info-icon"></i>
+                                    @eventItem.Event_Date.ToString("MMMM dd, yyyy")
+                                </span>
+                                <span class="Categories_event-card__info-item">
+                                    <i class="fas fa-users Categories_event-card__info-icon"></i>
+                                    @eventItem.Attendees_Number Guests
+                                </span>
+                            </div>
+                            <p class="Categories_event-card__description">
+                                @eventItem.Event_Discription
+                            </p>
+                        </div>
+                        <div class="Categories_event-card__footer">
+                            <div class="Categories_event-card__rating">
+                                @{
+                                    var averageRating = eventItem.Reviews?.Any() == true ?
+                                    eventItem.Reviews.Average(r => r.Rating) : 0;
+                                    var fullStars = (int)averageRating;
+                                    var hasHalfStar = averageRating - fullStars >= 0.5m;
+                                }
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    if (i <= fullStars)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    else if (i == fullStars + 1 && hasHalfStar)
+                                    {
+                                        <i class="fas fa-star-half-alt"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star"></i>
+                                    }
+                                }
+                                <span class="Categories_event-card__rating-score">
+                                    @averageRating.ToString("0.0")
+                                </span>
+                            </div>
+                            <a href="/Event-View-Page?id=@eventItem.Event_ID">
+                                <button class="Categories_event-card__button">View Details</button>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No events found in this category.</p>
+    }
+</main>

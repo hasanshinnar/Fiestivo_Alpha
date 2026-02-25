@@ -1,0 +1,454 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\loginsignup-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\loginsignup-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\loginsignup-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\loginsignup-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo.core\\models\\_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|solutionrelative:fiestivo.core\\models\\_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\js\\loginsignup-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\js\\loginsignup-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\css\\loginsignup-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\css\\loginsignup-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\user-profile-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\user-profile-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\js\\user-profile-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\js\\user-profile-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\css\\user-profile-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\css\\user-profile-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\user-profile-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\user-profile-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo.core\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|solutionrelative:fiestivo.core\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\event-view-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\event-view-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\event-view-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\event-view-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\categories-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\categories-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo.core\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|solutionrelative:fiestivo.core\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\categories-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\categories-page.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\js\\event-view-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\js\\event-view-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\js\\categories-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\js\\categories-page.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\css\\event-view-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\css\\event-view-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\wwwroot\\css\\categories-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\wwwroot\\css\\categories-page.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo.core\\models\\post_on.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|solutionrelative:fiestivo.core\\models\\post_on.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo.core\\models\\attend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|solutionrelative:fiestivo.core\\models\\attend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo.core\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C3E253D-AA92-4147-8296-3564FE50706F}|Fiestivo.Core\\Fiestivo.Core.csproj|solutionrelative:fiestivo.core\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|c:\\users\\osamb\\onedrive\\desktop\\fiestivo\\fiestivo\\pages\\create-events-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AC5F37B-008D-4D44-8731-CBB25FDEDF65}|Fiestivo\\Fiestivo.csproj|solutionrelative:fiestivo\\pages\\create-events-page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 26,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User-Profile-Page.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\User-Profile-Page.cshtml.cs",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\User-Profile-Page.cshtml.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\User-Profile-Page.cshtml.cs",
+              "RelativeToolTip": "Fiestivo\\Pages\\User-Profile-Page.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:08:39.532Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Fiestivo\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\appsettings.Development.json",
+              "RelativeToolTip": "Fiestivo\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-28T17:27:18.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginSignup-Page.css",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\LoginSignup-Page.css",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\css\\LoginSignup-Page.css",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\LoginSignup-Page.css",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\css\\LoginSignup-Page.css",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAAwCwBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-28T16:53:10.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginSignup-Page.js",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\LoginSignup-Page.js",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\js\\LoginSignup-Page.js",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\LoginSignup-Page.js",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\js\\LoginSignup-Page.js",
+              "ViewState": "AgIAADoAAAAAAAAAAAAmwF4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-28T16:15:09.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginSignup-Page.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\LoginSignup-Page.cshtml.cs",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\LoginSignup-Page.cshtml.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\LoginSignup-Page.cshtml.cs",
+              "RelativeToolTip": "Fiestivo\\Pages\\LoginSignup-Page.cshtml.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAUwMUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T16:15:47.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginSignup-Page.cshtml",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\LoginSignup-Page.cshtml",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\LoginSignup-Page.cshtml",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\LoginSignup-Page.cshtml",
+              "RelativeToolTip": "Fiestivo\\Pages\\LoginSignup-Page.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwFEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T16:15:35.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Post_On.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Post_On.cs",
+              "RelativeDocumentMoniker": "Fiestivo.Core\\Models\\Post_On.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Post_On.cs",
+              "RelativeToolTip": "Fiestivo.Core\\Models\\Post_On.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T20:59:45.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "Fiestivo.Core\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Review.cs",
+              "RelativeToolTip": "Fiestivo.Core\\Models\\Review.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvyMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T20:59:34.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Event-View-Page.css",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\Event-View-Page.css",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\css\\Event-View-Page.css",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\Event-View-Page.css",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\css\\Event-View-Page.css",
+              "ViewState": "AgIAALYAAAAAAAAAAAAIwOAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T20:57:48.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Categories-Page.css",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\Categories-Page.css",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\css\\Categories-Page.css",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\Categories-Page.css",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\css\\Categories-Page.css",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAIwCMBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T20:57:35.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Attend.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Attend.cs",
+              "RelativeDocumentMoniker": "Fiestivo.Core\\Models\\Attend.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Attend.cs",
+              "RelativeToolTip": "Fiestivo.Core\\Models\\Attend.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:41:43.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Fiestivo.Core\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Category.cs",
+              "RelativeToolTip": "Fiestivo.Core\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:37:42.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Fiestivo\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAQwFUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T18:02:32.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Categories-Page.js",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\Categories-Page.js",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\js\\Categories-Page.js",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\Categories-Page.js",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\js\\Categories-Page.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-25T18:03:47.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Categories-Page.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Categories-Page.cshtml.cs",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\Categories-Page.cshtml.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Categories-Page.cshtml.cs",
+              "RelativeToolTip": "Fiestivo\\Pages\\Categories-Page.cshtml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAowDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:03:35.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Categories-Page.cshtml",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Categories-Page.cshtml",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\Categories-Page.cshtml",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Categories-Page.cshtml",
+              "RelativeToolTip": "Fiestivo\\Pages\\Categories-Page.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAIAwwDEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T18:03:17.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Create-Events-Page.cshtml",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Create-Events-Page.cshtml",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\Create-Events-Page.cshtml",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Create-Events-Page.cshtml",
+              "RelativeToolTip": "Fiestivo\\Pages\\Create-Events-Page.cshtml",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAUwKwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T18:02:53.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "Fiestivo.Core\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\Event.cs",
+              "RelativeToolTip": "Fiestivo.Core\\Models\\Event.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:33:29.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Fiestivo\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Fiestivo\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAqwFUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:26:08.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User-Profile-Page.css",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\User-Profile-Page.css",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\css\\User-Profile-Page.css",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\css\\User-Profile-Page.css",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\css\\User-Profile-Page.css",
+              "ViewState": "AgIAABIAAAAAAAAAAAD4vzIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-25T16:21:06.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User-Profile-Page.js",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\User-Profile-Page.js",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\js\\User-Profile-Page.js",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\User-Profile-Page.js",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\js\\User-Profile-Page.js",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAAwF0BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-25T16:18:36.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Event-View-Page.js",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\Event-View-Page.js",
+              "RelativeDocumentMoniker": "Fiestivo\\wwwroot\\js\\Event-View-Page.js",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\wwwroot\\js\\Event-View-Page.js",
+              "RelativeToolTip": "Fiestivo\\wwwroot\\js\\Event-View-Page.js",
+              "ViewState": "AgIAADwAAAAAAAAAAAAswGUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-25T16:18:00.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Event-View-Page.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Event-View-Page.cshtml.cs",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\Event-View-Page.cshtml.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Event-View-Page.cshtml.cs",
+              "RelativeToolTip": "Fiestivo\\Pages\\Event-View-Page.cshtml.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAowKcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:17:47.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Event-View-Page.cshtml",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Event-View-Page.cshtml",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\Event-View-Page.cshtml",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\Event-View-Page.cshtml",
+              "RelativeToolTip": "Fiestivo\\Pages\\Event-View-Page.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAIAwwEAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T16:17:36.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User-Profile-Page.cshtml",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\User-Profile-Page.cshtml",
+              "RelativeDocumentMoniker": "Fiestivo\\Pages\\User-Profile-Page.cshtml",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Pages\\User-Profile-Page.cshtml",
+              "RelativeToolTip": "Fiestivo\\Pages\\User-Profile-Page.cshtml",
+              "ViewState": "AgIAAL0AAAAAAAAAAIAwwOAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T16:08:27.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_User.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\_User.cs",
+              "RelativeDocumentMoniker": "Fiestivo.Core\\Models\\_User.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo.Core\\Models\\_User.cs",
+              "RelativeToolTip": "Fiestivo.Core\\Models\\_User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:09:00.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Program.cs",
+              "RelativeDocumentMoniker": "Fiestivo\\Program.cs",
+              "ToolTip": "C:\\Users\\osamb\\OneDrive\\Desktop\\Fiestivo\\Fiestivo\\Program.cs",
+              "RelativeToolTip": "Fiestivo\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAEwEUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T16:08:50.46Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

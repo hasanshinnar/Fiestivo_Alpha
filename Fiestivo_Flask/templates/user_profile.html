@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>{{ user.username }}</h2>
+  <p>{{ user.full_name }}</p>
+  <p>{{ user.bio }}</p>
+  <h4>Events</h4>
+  <ul>
+  {% for e in user.events %}
+    <li><a href="{{ url_for('event_view', event_id=e.id) }}">{{ e.title }}</a></li>
+  {% else %}
+    <li>No events</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
