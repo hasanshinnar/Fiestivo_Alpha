@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-  <h1>{{ event.title }}</h1>
-  <p>{{ event.description }}</p>
-  <p><strong>Location:</strong> {{ event.location }}</p>
-  <p><strong>Date:</strong> {{ event.date }} <strong>Time:</strong> {{ event.time }}</p>
-  <p><strong>Organizer:</strong> <a href="{{ url_for('profile', user_id=event.user.id) }}">{{ event.user.username }}</a></p>
-  <p><strong>Average rating:</strong> {{ event.average_rating }}</p>
-{% endblock %}
