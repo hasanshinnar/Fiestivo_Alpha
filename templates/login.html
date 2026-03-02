@@ -1,369 +1,630 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login – Fiestivo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    :root {
-      --pink: #ff2770;
-      --pink-dark: #d91f5e;
-      --black: #0a0a0a;
-      --nav-bg: #0f0f0f;
-      --off-white: #faf9f7;
-      --text-dark: #1a1a1a;
-      --text-muted: #777;
-      --border: rgba(0,0,0,0.1);
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:'DM Sans',sans-serif;
-      background: var(--nav-bg);
-      min-height:100vh;
-      display:flex; flex-direction:column;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – Fiestivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --pink: #ff2770;
+        --pink-dark: #d91f5e;
+        --black: #0a0a0a;
+        --nav-bg: #0f0f0f;
+        --off-white: #faf9f7;
+        --text-dark: #1a1a1a;
+        --text-muted: #777;
+        --border: rgba(0, 0, 0, 0.1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--nav-bg);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-    /* NAV */
-    nav {
-      height:62px; background:var(--nav-bg);
-      border-bottom:1px solid rgba(255,255,255,0.06);
-      display:flex; align-items:center; padding:0 32px;
-      position:sticky; top:0; z-index:100;
-    }
-    .nav-inner { width:100%; max-width:1280px; margin:0 auto; display:flex; align-items:center; gap:24px; }
-    .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:22px; color:#fff; text-decoration:none; }
-    .logo span { color:var(--pink); }
-    .search-wrap { flex:1; max-width:420px; display:flex; height:36px; }
-    .search-wrap input {
-      flex:1; padding:0 14px;
-      background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-right:none;
-      border-radius:8px 0 0 8px; color:#fff; font-size:13px; font-family:'DM Sans',sans-serif; outline:none;
-    }
-    .search-wrap input::placeholder { color:rgba(255,255,255,0.35); }
-    .search-wrap button {
-      padding:0 16px; background:var(--pink); border:none; border-radius:0 8px 8px 0;
-      color:#fff; cursor:pointer; font-size:13px; transition:background 0.2s;
-    }
-    .search-wrap button:hover { background:var(--pink-dark); }
-    .nav-links { margin-left:auto; display:flex; align-items:center; gap:6px; }
-    .nav-links a {
-      color:rgba(255,255,255,0.7); text-decoration:none; font-size:13.5px; font-weight:500;
-      padding:7px 14px; border-radius:7px; transition:all 0.2s; display:flex; align-items:center; gap:6px;
-    }
-    .nav-links a:hover { color:#fff; background:rgba(255,255,255,0.07); }
-    .nav-links a.active { color:var(--pink); }
-    .nav-links .btn-create { background:var(--pink); color:#fff !important; padding:7px 18px; }
-    .nav-links .btn-create:hover { background:var(--pink-dark); }
+      /* NAV */
+      nav {
+        height: 62px;
+        background: var(--nav-bg);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-inner {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .logo {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: 22px;
+        color: #fff;
+        text-decoration: none;
+      }
+      .logo span {
+        color: var(--pink);
+      }
+      .search-wrap {
+        flex: 1;
+        max-width: 420px;
+        display: flex;
+        height: 36px;
+      }
+      .search-wrap input {
+        flex: 1;
+        padding: 0 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-right: none;
+        border-radius: 8px 0 0 8px;
+        color: #fff;
+        font-size: 13px;
+        font-family: "DM Sans", sans-serif;
+        outline: none;
+      }
+      .search-wrap input::placeholder {
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .search-wrap button {
+        padding: 0 16px;
+        background: var(--pink);
+        border: none;
+        border-radius: 0 8px 8px 0;
+        color: #fff;
+        cursor: pointer;
+        font-size: 13px;
+        transition: background 0.2s;
+      }
+      .search-wrap button:hover {
+        background: var(--pink-dark);
+      }
+      .nav-links {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 500;
+        padding: 7px 14px;
+        border-radius: 7px;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nav-links a:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .nav-links a.active {
+        color: var(--pink);
+      }
+      .nav-links .btn-create {
+        background: var(--pink);
+        color: #fff !important;
+        padding: 7px 18px;
+      }
+      .nav-links .btn-create:hover {
+        background: var(--pink-dark);
+      }
 
-    /* MAIN LAYOUT */
-    .page {
-      flex:1; display:grid;
-      grid-template-columns:1fr 1fr;
-      min-height: calc(100vh - 62px);
-    }
+      /* MAIN LAYOUT */
+      .page {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: calc(100vh - 62px);
+      }
 
-    /* LEFT: Decorative panel */
-    .left-panel {
-      background: linear-gradient(160deg, #1a0a12 0%, #0f0f0f 50%, #0a0a18 100%);
-      padding:64px;
-      display:flex; flex-direction:column; justify-content:space-between;
-      position:relative; overflow:hidden;
-    }
-    .left-panel::before {
-      content:'';
-      position:absolute; top:-120px; left:-80px;
-      width:400px; height:400px;
-      background: radial-gradient(circle, rgba(255,39,112,0.18) 0%, transparent 70%);
-      border-radius:50%;
-    }
-    .left-panel::after {
-      content:'';
-      position:absolute; bottom:-100px; right:-60px;
-      width:300px; height:300px;
-      background: radial-gradient(circle, rgba(255,39,112,0.1) 0%, transparent 70%);
-      border-radius:50%;
-    }
-    .left-content { position:relative; z-index:2; }
-    .left-tag {
-      display:inline-flex; align-items:center; gap:8px;
-      background:rgba(255,39,112,0.12);
-      border:1px solid rgba(255,39,112,0.25);
-      color:var(--pink); font-size:12px; font-weight:600;
-      padding:6px 14px; border-radius:6px;
-      margin-bottom:32px;
-    }
-    .left-heading {
-      font-family:'Syne',sans-serif;
-      font-size:clamp(32px,3.5vw,52px);
-      font-weight:800; color:#fff;
-      line-height:1.1; letter-spacing:-1px;
-      margin-bottom:20px;
-    }
-    .left-heading span { color:var(--pink); }
-    .left-desc { color:rgba(255,255,255,0.5); font-size:15px; line-height:1.7; }
+      /* LEFT: Decorative panel */
+      .left-panel {
+        background: linear-gradient(
+          160deg,
+          #1a0a12 0%,
+          #0f0f0f 50%,
+          #0a0a18 100%
+        );
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .left-panel::before {
+        content: "";
+        position: absolute;
+        top: -120px;
+        left: -80px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 39, 112, 0.18) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .left-panel::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        right: -60px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 39, 112, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+      .left-content {
+        position: relative;
+        z-index: 2;
+      }
+      .left-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 39, 112, 0.12);
+        border: 1px solid rgba(255, 39, 112, 0.25);
+        color: var(--pink);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 6px 14px;
+        border-radius: 6px;
+        margin-bottom: 32px;
+      }
+      .left-heading {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(32px, 3.5vw, 52px);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+      }
+      .left-heading span {
+        color: var(--pink);
+      }
+      .left-desc {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 15px;
+        line-height: 1.7;
+      }
 
-    .left-stats {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:16px; position:relative; z-index:2;
-    }
-    .stat-box {
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.07);
-      border-radius:12px; padding:20px;
-    }
-    .stat-box .num {
-      font-family:'Syne',sans-serif;
-      font-size:28px; font-weight:800; color:#fff; margin-bottom:4px;
-    }
-    .stat-box .num span { color:var(--pink); }
-    .stat-box p { font-size:12px; color:rgba(255,255,255,0.4); }
+      .left-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        position: relative;
+        z-index: 2;
+      }
+      .stat-box {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 12px;
+        padding: 20px;
+      }
+      .stat-box .num {
+        font-family: "Syne", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .stat-box .num span {
+        color: var(--pink);
+      }
+      .stat-box p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+      }
 
-    /* RIGHT: Form panel */
-    .right-panel {
-      background: var(--off-white);
-      display:flex; align-items:center; justify-content:center;
-      padding:48px 64px;
-    }
-    .form-box {
-      width:100%; max-width:400px;
-    }
-    .form-box h2 {
-      font-family:'Syne',sans-serif;
-      font-size:30px; font-weight:800;
-      color:var(--text-dark); margin-bottom:6px;
-    }
-    .form-box .sub {
-      font-size:14px; color:var(--text-muted); margin-bottom:36px;
-    }
-    .form-box .sub a { color:var(--pink); text-decoration:none; font-weight:500; }
-    .form-box .sub a:hover { text-decoration:underline; }
+      /* RIGHT: Form panel */
+      .right-panel {
+        background: var(--off-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 64px;
+      }
+      .form-box {
+        width: 100%;
+        max-width: 400px;
+      }
+      .form-box h2 {
+        font-family: "Syne", sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 6px;
+      }
+      .form-box .sub {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 36px;
+      }
+      .form-box .sub a {
+        color: var(--pink);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .form-box .sub a:hover {
+        text-decoration: underline;
+      }
 
-    .field {
-      position:relative; margin-bottom:20px;
-    }
-    .field input {
-      width:100%; padding:14px 44px 14px 16px;
-      background:#fff;
-      border:1.5px solid rgba(0,0,0,0.1);
-      border-radius:10px; font-size:14px;
-      font-family:'DM Sans',sans-serif; color:var(--text-dark);
-      outline:none; transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .field input:focus {
-      border-color:var(--pink);
-      box-shadow:0 0 0 3px rgba(255,39,112,0.08);
-    }
-    .field input::placeholder { color:rgba(0,0,0,0.3); }
-    .field-icon {
-      position:absolute; right:14px; top:50%;
-      transform:translateY(-50%);
-      color:rgba(0,0,0,0.25); font-size:15px;
-    }
-    .field-label {
-      font-size:12.5px; font-weight:600; color:var(--text-muted);
-      margin-bottom:6px; display:block; letter-spacing:0.3px;
-    }
+      .field {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .field input {
+        width: 100%;
+        padding: 14px 44px 14px 16px;
+        background: #fff;
+        border: 1.5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-size: 14px;
+        font-family: "DM Sans", sans-serif;
+        color: var(--text-dark);
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .field input:focus {
+        border-color: var(--pink);
+        box-shadow: 0 0 0 3px rgba(255, 39, 112, 0.08);
+      }
+      .field input::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+      }
+      .field-icon {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(0, 0, 0, 0.25);
+        font-size: 15px;
+      }
+      .field-label {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+        display: block;
+        letter-spacing: 0.3px;
+      }
 
-    .forgot { text-align:right; margin-top:-12px; margin-bottom:20px; }
-    .forgot a { font-size:12px; color:var(--pink); text-decoration:none; }
-    .forgot a:hover { text-decoration:underline; }
+      .forgot {
+        text-align: right;
+        margin-top: -12px;
+        margin-bottom: 20px;
+      }
+      .forgot a {
+        font-size: 12px;
+        color: var(--pink);
+        text-decoration: none;
+      }
+      .forgot a:hover {
+        text-decoration: underline;
+      }
 
-    .btn-submit {
-      width:100%; padding:14px;
-      background:var(--pink); color:#fff; border:none;
-      border-radius:10px; font-size:15px; font-weight:700;
-      cursor:pointer; font-family:'DM Sans',sans-serif;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-submit:hover { background:var(--pink-dark); transform:translateY(-1px); }
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background: var(--pink);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "DM Sans", sans-serif;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .btn-submit:hover {
+        background: var(--pink-dark);
+        transform: translateY(-1px);
+      }
 
-    .divider {
-      display:flex; align-items:center; gap:12px;
-      margin:24px 0; color:rgba(0,0,0,0.2); font-size:12px;
-    }
-    .divider::before, .divider::after {
-      content:''; flex:1; height:1px; background:rgba(0,0,0,0.1);
-    }
+      .divider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 24px 0;
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 12px;
+      }
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+      }
 
-    .verify-box {
-      background:#fff; border:1.5px solid rgba(0,0,0,0.08);
-      border-radius:12px; padding:18px 20px;
-      display:flex; align-items:center; gap:14px;
-      cursor:pointer; transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .verify-box:hover {
-      border-color:rgba(255,39,112,0.3);
-      box-shadow:0 4px 16px rgba(255,39,112,0.08);
-    }
-    .verify-icon {
-      width:40px; height:40px; border-radius:10px;
-      background:rgba(255,39,112,0.08); display:flex;
-      align-items:center; justify-content:center;
-      color:var(--pink); font-size:18px; flex-shrink:0;
-    }
-    .verify-text h4 { font-size:13.5px; font-weight:700; color:var(--text-dark); margin-bottom:2px; }
-    .verify-text p { font-size:12px; color:var(--text-muted); }
-    .verify-badge {
-      margin-left:auto; background:rgba(255,39,112,0.08);
-      color:var(--pink); font-size:11px; font-weight:700;
-      padding:3px 8px; border-radius:5px; white-space:nowrap;
-    }
+      .verify-box {
+        background: #fff;
+        border: 1.5px solid rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .verify-box:hover {
+        border-color: rgba(255, 39, 112, 0.3);
+        box-shadow: 0 4px 16px rgba(255, 39, 112, 0.08);
+      }
+      .verify-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(255, 39, 112, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--pink);
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .verify-text h4 {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 2px;
+      }
+      .verify-text p {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .verify-badge {
+        margin-left: auto;
+        background: rgba(255, 39, 112, 0.08);
+        color: var(--pink);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
 
-    .register-panel { display:none; }
-    .register-panel.visible { display:block; }
-    .login-panel.hidden { display:none; }
+      .register-panel {
+        display: none;
+      }
+      .register-panel.visible {
+        display: block;
+      }
+      .login-panel.hidden {
+        display: none;
+      }
 
-    @media(max-width:900px){
-      .page { grid-template-columns:1fr; }
-      .left-panel { display:none; }
-      .right-panel { padding:48px 32px; }
-    }
-    @media(max-width:480px){
-      nav { padding:0 16px; }
-      .right-panel { padding:32px 20px; }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="homepage.html">Fiesti<span>vo</span></a>
-    <div class="search-wrap">
-      <input type="text" placeholder="Search events near you…" />
-      <button><i class="fas fa-search"></i></button>
-    </div>
-    <div class="nav-links">
-      <a href="homepage.html"><i class="fas fa-home"></i> <span>Home</span></a>
-      <a href="creat.html" class="btn-create"><i class="fas fa-plus"></i> Create Event</a>
-      <a href="login.html" class="active"><i class="fas fa-user"></i> Login</a>
-    </div>
-  </div>
-</nav>
-
-<div class="page">
-  <!-- LEFT -->
-  <div class="left-panel">
-    <div class="left-content">
-      <div class="left-tag"><i class="fas fa-shield-alt"></i> Verified Community</div>
-      <h2 class="left-heading">Your crew<br>is <span>waiting</span><br>for you</h2>
-      <p class="left-desc">Join thousands of Jordanians who use Fiestivo to find people, fill events, and make every outing actually happen.</p>
-    </div>
-    <div class="left-stats">
-      <div class="stat-box">
-        <div class="num">3.2<span>K</span></div>
-        <p>Active users in Amman</p>
+      @media (max-width: 900px) {
+        .page {
+          grid-template-columns: 1fr;
+        }
+        .left-panel {
+          display: none;
+        }
+        .right-panel {
+          padding: 48px 32px;
+        }
+      }
+      @media (max-width: 480px) {
+        nav {
+          padding: 0 16px;
+        }
+        .right-panel {
+          padding: 32px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a class="logo" href="homepage.html">Fiesti<span>vo</span></a>
+        <div class="search-wrap">
+          <input type="text" placeholder="Search events near you…" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-links">
+          <a href="homepage.html"
+            ><i class="fas fa-home"></i> <span>Home</span></a
+          >
+          <a href="creat.html" class="btn-create"
+            ><i class="fas fa-plus"></i> Create Event</a
+          >
+          <a href="login.html" class="active"
+            ><i class="fas fa-user"></i> Login</a
+          >
+        </div>
       </div>
-      <div class="stat-box">
-        <div class="num">180<span>+</span></div>
-        <p>Events open right now</p>
-      </div>
-      <div class="stat-box">
-        <div class="num">94<span>%</span></div>
-        <p>Events fully filled</p>
-      </div>
-      <div class="stat-box">
-        <div class="num">4.8<span>★</span></div>
-        <p>Average host rating</p>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- RIGHT -->
-  <div class="right-panel">
-    <div class="form-box">
-
-      <!-- LOGIN -->
-      <div class="login-panel" id="loginPanel">
-        <h2>Welcome back</h2>
-        <p class="sub">Don't have an account? <a href="#" id="toRegister">Sign up here</a></p>
-
-        <div class="field">
-          <label class="field-label">Username</label>
-          <input type="text" placeholder="Your username" />
-          <i class="fas fa-user field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Password</label>
-          <input type="password" placeholder="Your password" id="loginPass" />
-          <i class="fas fa-eye field-icon" id="toggleLogin" style="cursor:pointer;"></i>
-        </div>
-        <div class="forgot"><a href="#">Forgot password?</a></div>
-        <button class="btn-submit">Log In</button>
-      </div>
-
-      <!-- REGISTER -->
-      <div class="register-panel" id="registerPanel">
-        <h2>Create account</h2>
-        <p class="sub">Already have one? <a href="#" id="toLogin">Log in here</a></p>
-
-        <div class="field">
-          <label class="field-label">Full Name</label>
-          <input type="text" placeholder="Your full name" />
-          <i class="fas fa-user field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Username</label>
-          <input type="text" placeholder="Choose a username" />
-          <i class="fas fa-at field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Email</label>
-          <input type="email" placeholder="your@email.com" />
-          <i class="fas fa-envelope field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Password</label>
-          <input type="password" placeholder="Create a password" id="regPass" />
-          <i class="fas fa-eye field-icon" id="toggleReg" style="cursor:pointer;"></i>
-        </div>
-        <button class="btn-submit" style="margin-bottom:20px;">Create Account</button>
-
-        <div class="divider">or boost your profile</div>
-
-        <div class="verify-box">
-          <div class="verify-icon"><i class="fas fa-id-card"></i></div>
-          <div class="verify-text">
-            <h4>Verify your identity</h4>
-            <p>Upload your ID to get a verified badge</p>
+    <div class="page">
+      <!-- LEFT -->
+      <div class="left-panel">
+        <div class="left-content">
+          <div class="left-tag">
+            <i class="fas fa-shield-alt"></i> Verified Community
           </div>
-          <div class="verify-badge">+Trust Score</div>
+          <h2 class="left-heading">
+            Your crew<br />is <span>waiting</span><br />for you
+          </h2>
+          <p class="left-desc">
+            Join thousands of Jordanians who use Fiestivo to find people, fill
+            events, and make every outing actually happen.
+          </p>
+        </div>
+        <div class="left-stats">
+          <div class="stat-box">
+            <div class="num">3.2<span>K</span></div>
+            <p>Active users in Amman</p>
+          </div>
+          <div class="stat-box">
+            <div class="num">180<span>+</span></div>
+            <p>Events open right now</p>
+          </div>
+          <div class="stat-box">
+            <div class="num">94<span>%</span></div>
+            <p>Events fully filled</p>
+          </div>
+          <div class="stat-box">
+            <div class="num">4.8<span>★</span></div>
+            <p>Average host rating</p>
+          </div>
         </div>
       </div>
 
+      <!-- RIGHT -->
+      <div class="right-panel">
+        <div class="form-box">
+          <!-- LOGIN -->
+          <div class="login-panel" id="loginPanel">
+            <h2>Welcome back</h2>
+            <p class="sub">
+              Don't have an account?
+              <a href="#" id="toRegister">Sign up here</a>
+            </p>
+
+            <div class="field">
+              <label class="field-label">Username</label>
+              <input type="text" placeholder="Your username" />
+              <i class="fas fa-user field-icon"></i>
+            </div>
+            <div class="field">
+              <label class="field-label">Password</label>
+              <input
+                type="password"
+                placeholder="Your password"
+                id="loginPass"
+              />
+              <i
+                class="fas fa-eye field-icon"
+                id="toggleLogin"
+                style="cursor: pointer"
+              ></i>
+            </div>
+            <div class="forgot"><a href="#">Forgot password?</a></div>
+            <button class="btn-submit">Log In</button>
+          </div>
+
+          <!-- REGISTER -->
+          <div class="register-panel" id="registerPanel">
+            <h2>Create account</h2>
+            <p class="sub">
+              Already have one? <a href="#" id="toLogin">Log in here</a>
+            </p>
+
+            <div class="field">
+              <label class="field-label">Full Name</label>
+              <input type="text" placeholder="Your full name" />
+              <i class="fas fa-user field-icon"></i>
+            </div>
+            <div class="field">
+              <label class="field-label">Username</label>
+              <input type="text" placeholder="Choose a username" />
+              <i class="fas fa-at field-icon"></i>
+            </div>
+            <div class="field">
+              <label class="field-label">Email</label>
+              <input type="email" placeholder="your@email.com" />
+              <i class="fas fa-envelope field-icon"></i>
+            </div>
+            <div class="field">
+              <label class="field-label">Password</label>
+              <input
+                type="password"
+                placeholder="Create a password"
+                id="regPass"
+              />
+              <i
+                class="fas fa-eye field-icon"
+                id="toggleReg"
+                style="cursor: pointer"
+              ></i>
+            </div>
+            <button class="btn-submit" style="margin-bottom: 20px">
+              Create Account
+            </button>
+
+            <div class="divider">or boost your profile</div>
+
+            <div class="verify-box">
+              <div class="verify-icon"><i class="fas fa-id-card"></i></div>
+              <div class="verify-text">
+                <h4>Verify your identity</h4>
+                <p>Upload your ID to get a verified badge</p>
+              </div>
+              <div class="verify-badge">+Trust Score</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script>
-  const loginPanel = document.getElementById('loginPanel');
-  const registerPanel = document.getElementById('registerPanel');
-  const toRegister = document.getElementById('toRegister');
-  const toLogin = document.getElementById('toLogin');
+    <script>
+      const loginPanel = document.getElementById("loginPanel");
+      const registerPanel = document.getElementById("registerPanel");
+      const toRegister = document.getElementById("toRegister");
+      const toLogin = document.getElementById("toLogin");
 
-  toRegister.addEventListener('click', e => {
-    e.preventDefault();
-    loginPanel.classList.add('hidden');
-    registerPanel.classList.add('visible');
-  });
-  toLogin.addEventListener('click', e => {
-    e.preventDefault();
-    registerPanel.classList.remove('visible');
-    loginPanel.classList.remove('hidden');
-  });
+      toRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginPanel.classList.add("hidden");
+        registerPanel.classList.add("visible");
+      });
+      toLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerPanel.classList.remove("visible");
+        loginPanel.classList.remove("hidden");
+      });
 
-  // Password toggles
-  document.getElementById('toggleLogin').addEventListener('click', () => {
-    const p = document.getElementById('loginPass');
-    p.type = p.type === 'password' ? 'text' : 'password';
-  });
-  document.getElementById('toggleReg').addEventListener('click', () => {
-    const p = document.getElementById('regPass');
-    p.type = p.type === 'password' ? 'text' : 'password';
-  });
-</script>
-</body>
+      // Password toggles
+      document.getElementById("toggleLogin").addEventListener("click", () => {
+        const p = document.getElementById("loginPass");
+        p.type = p.type === "password" ? "text" : "password";
+      });
+      document.getElementById("toggleReg").addEventListener("click", () => {
+        const p = document.getElementById("regPass");
+        p.type = p.type === "password" ? "text" : "password";
+      });
+    </script>
+  </body>
 </html>
