@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}Fiestivo - Find Your People, Fill Your Team{% endblock %}
 
-{% block content %}
-<head>
-
-  {% block pageCSS %} 
+{% block pageCSS %}
   <style>
     :root {
       --pink: #ff2770;
@@ -320,8 +316,9 @@
 
  
   </style>
-</head>
-<body>
+    {% endblock %}
+
+{% block content %}
 
 <!-- NAV -->
 
@@ -533,11 +530,10 @@
 <section class="cta-section">
   <h2>Got an event in mind?</h2>
   <p>Post it in minutes. Let verified people join. Make it happen.</p>
-  <a href="creat.html" class="btn-white">Create Your Event <i class="fas fa-arrow-right"></i></a>
+  <a href="{{ url_for('create_event') }}" class="btn-white">Create Your Event <i class="fas fa-arrow-right"></i></a>
 </section>
 
 <!--A7A-->
-
 <script>
   const slides = document.querySelectorAll('.slide');
   const thumbs = document.querySelectorAll('.thumb');
@@ -576,9 +572,5 @@
 
   autoplay();
 </script>
-</body>
-{% endblock %}
-
-{% block footerCSS %}
 
 {% endblock %}

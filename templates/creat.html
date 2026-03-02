@@ -1,18 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Event – Fiestivo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+{% extends 'base.html' %}
+
+{% block pageCSS %}
     <style>
       :root {
         --pink: #ff2770;
@@ -34,102 +22,6 @@
         font-family: "DM Sans", sans-serif;
         background: var(--off-white);
         color: var(--text-dark);
-      }
-
-      /* NAV */
-      nav {
-        height: 62px;
-        background: var(--nav-bg);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        display: flex;
-        align-items: center;
-        padding: 0 32px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .nav-inner {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .logo {
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
-        font-size: 22px;
-        color: #fff;
-        text-decoration: none;
-      }
-      .logo span {
-        color: var(--pink);
-      }
-      .search-wrap {
-        flex: 1;
-        max-width: 420px;
-        display: flex;
-        height: 36px;
-      }
-      .search-wrap input {
-        flex: 1;
-        padding: 0 14px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-right: none;
-        border-radius: 8px 0 0 8px;
-        color: #fff;
-        font-size: 13px;
-        font-family: "DM Sans", sans-serif;
-        outline: none;
-      }
-      .search-wrap input::placeholder {
-        color: rgba(255, 255, 255, 0.35);
-      }
-      .search-wrap button {
-        padding: 0 16px;
-        background: var(--pink);
-        border: none;
-        border-radius: 0 8px 8px 0;
-        color: #fff;
-        cursor: pointer;
-        font-size: 13px;
-      }
-      .search-wrap button:hover {
-        background: var(--pink-dark);
-      }
-      .nav-links {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 13.5px;
-        font-weight: 500;
-        padding: 7px 14px;
-        border-radius: 7px;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a:hover {
-        color: #fff;
-        background: rgba(255, 255, 255, 0.07);
-      }
-      .nav-links a.active {
-        color: var(--pink);
-      }
-      .nav-links .btn-create {
-        background: var(--pink);
-        color: #fff !important;
-      }
-      .nav-links .btn-create:hover {
-        background: var(--pink-dark);
       }
 
       /* PAGE LAYOUT */
@@ -483,9 +375,6 @@
       }
 
       @media (max-width: 768px) {
-        nav {
-          padding: 0 16px;
-        }
         .page {
           padding: 32px 20px 64px;
         }
@@ -497,29 +386,13 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <nav>
-      <div class="nav-inner">
-        <a class="logo" href="homepage.html">Fiesti<span>vo</span></a>
-        <div class="search-wrap">
-          <input type="text" placeholder="Search events near you…" />
-          <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="nav-links">
-          <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
-          <a href="creat.html" class="btn-create active"
-            ><i class="fas fa-plus"></i> Create</a
-          >
-          <a href="login.html"><i class="fas fa-user"></i> Login</a>
-        </div>
-      </div>
-    </nav>
+{% endblock %}
 
+{% block content %}
     <div class="page">
       <div class="page-header">
         <div class="breadcrumb">
-          <a href="homepage.html">Home</a>
+          <a href="/">Home</a>
           <i class="fas fa-chevron-right" style="font-size: 9px"></i>
           Create Event
         </div>
@@ -553,7 +426,7 @@
         </div>
       </div>
 
-      <form>
+      <form action="/CreateEvent" method="post">
         <!-- EVENT BASICS -->
         <div class="form-section">
           <div class="sec-header">
@@ -569,26 +442,28 @@
               <label>Event Title *</label>
               <input
                 type="text"
+                name="title"
                 placeholder="e.g. 5-a-Side at Yarmouk Stadium"
+                required
               />
             </div>
             <div class="form-group">
               <label>Event Type *</label>
-              <select>
+              <select name="event_type" required>
                 <option value="">Choose category</option>
-                <option>⚽ Football</option>
-                <option>🎾 Padel</option>
-                <option>🏀 Basketball</option>
-                <option>🃏 Mafia / Card Games</option>
-                <option>🍽️ Hash w Nash (Lunch/Dinner)</option>
-                <option>🏖️ Chalet / Pool Day</option>
-                <option>🎮 Gaming Night (PlayStation)</option>
-                <option>🏔️ Hiking / Nature Trip</option>
-                <option>🚗 Road Trip</option>
-                <option>🎳 Bowling Night</option>
-                <option>🎯 Paintball / Laser Tag</option>
-                <option>🎬 Cinema Outing</option>
-                <option>Other</option>
+                <option value="football">⚽ Football</option>
+                <option value="padel">🎾 Padel</option>
+                <option value="basketball">🏀 Basketball</option>
+                <option value="mafia">🃏 Mafia / Card Games</option>
+                <option value="dinner">🍽️ Hash w Nash (Lunch/Dinner)</option>
+                <option value="chalet">🏖️ Chalet / Pool Day</option>
+                <option value="gaming">🎮 Gaming Night (PlayStation)</option>
+                <option value="hiking">🏔️ Hiking / Nature Trip</option>
+                <option value="roadtrip">🚗 Road Trip</option>
+                <option value="bowling">🎳 Bowling Night</option>
+                <option value="paintball">🎯 Paintball / Laser Tag</option>
+                <option value="cinema">🎬 Cinema Outing</option>
+                <option value="other">Other</option>
               </select>
             </div>
           </div>
@@ -596,15 +471,15 @@
           <div class="form-row thirds">
             <div class="form-group">
               <label>Event Date *</label>
-              <input type="date" />
+              <input type="date" name="date" required />
             </div>
             <div class="form-group">
               <label>Start Time *</label>
-              <input type="time" />
+              <input type="time" name="time" required />
             </div>
             <div class="form-group">
               <label>Duration (hours)</label>
-              <input type="number" placeholder="e.g. 2" min="0.5" step="0.5" />
+              <input type="number" name="duration" placeholder="e.g. 2" min="0.5" step="0.5" />
             </div>
           </div>
         </div>
@@ -622,7 +497,7 @@
           <div class="form-row">
             <div class="form-group">
               <label>Venue / Address *</label>
-              <input type="text" placeholder="Name of venue or full address" />
+              <input type="text" name="venue" placeholder="Name of venue or full address" required />
               <span class="helper"
                 >Exact address is hidden from public — only confirmed joiners
                 see it</span
@@ -632,7 +507,9 @@
               <label>Area / Neighborhood *</label>
               <input
                 type="text"
+                name="area"
                 placeholder="e.g. Yarmouk, Shmeisani, Mecca St."
+                required
               />
               <span class="helper"
                 >This is what's shown publicly on the event card</span
@@ -645,16 +522,20 @@
               <label>Total Capacity *</label>
               <input
                 type="number"
+                name="total_capacity"
                 placeholder="Max total people the venue holds"
                 min="2"
+                required
               />
             </div>
             <div class="form-group">
               <label>Your Confirmed Headcount *</label>
               <input
                 type="number"
+                name="confirmed_count"
                 placeholder="People already confirmed from your side"
                 min="1"
+                required
               />
             </div>
           </div>
@@ -664,14 +545,17 @@
               <label>Open Spots for Public *</label>
               <input
                 type="number"
+                name="open_spots"
                 placeholder="How many people can join via Fiestivo"
                 min="1"
+                required
               />
             </div>
             <div class="form-group">
               <label>Linked Vendor Booking</label>
               <input
                 type="text"
+                name="booking_ref"
                 placeholder="Booking reference # (if booked via marketplace)"
               />
               <span class="helper"
@@ -697,7 +581,9 @@
             <div class="form-group full">
               <label>Description *</label>
               <textarea
+                name="description"
                 placeholder="Tell potential joiners what the vibe is, what to bring, and what to expect…"
+                required
               ></textarea>
             </div>
           </div>
@@ -734,6 +620,7 @@
               <div style="display: flex; gap: 10px; align-items: center">
                 <input
                   type="number"
+                  name="min_age"
                   placeholder="Min age"
                   min="13"
                   style="width: 100%"
@@ -741,6 +628,7 @@
                 <span style="color: var(--text-muted); flex-shrink: 0">to</span>
                 <input
                   type="number"
+                  name="max_age"
                   placeholder="Max age"
                   min="13"
                   style="width: 100%"
@@ -754,18 +642,20 @@
               <label>Entry Cost per Person (JD)</label>
               <input
                 type="number"
+                name="cost"
                 placeholder="0 for free"
                 min="0"
                 step="0.5"
+                value="0"
               />
             </div>
             <div class="form-group">
               <label>Payment Method</label>
-              <select>
-                <option>Free / No cost</option>
-                <option>Cash on arrival</option>
-                <option>Split via app</option>
-                <option>Handled by vendor</option>
+              <select name="payment_method">
+                <option value="free">Free / No cost</option>
+                <option value="cash">Cash on arrival</option>
+                <option value="split">Split via app</option>
+                <option value="vendor">Handled by vendor</option>
               </select>
             </div>
           </div>
@@ -802,6 +692,7 @@
                 id="approvalToggle"
                 onclick="this.classList.toggle('on')"
               ></div>
+              <input type="hidden" name="approval_mode" id="approval_mode" value="off">
             </div>
             <div class="toggle-row">
               <div class="toggle-info">
@@ -816,6 +707,7 @@
                 id="publicToggle"
                 onclick="this.classList.toggle('on')"
               ></div>
+              <input type="hidden" name="public_event" id="public_event" value="on">
             </div>
             <div class="toggle-row">
               <div class="toggle-info">
@@ -827,6 +719,7 @@
                 id="waitlistToggle"
                 onclick="this.classList.toggle('on')"
               ></div>
+              <input type="hidden" name="waitlist" id="waitlist" value="off">
             </div>
           </div>
 
@@ -848,5 +741,18 @@
         </div>
       </form>
     </div>
-  </body>
-</html>
+
+    <script>
+      // Handle toggle switches with hidden inputs
+      document.querySelectorAll('.toggle').forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const hiddenInput = this.nextElementSibling;
+          if (this.classList.contains('on')) {
+            hiddenInput.value = 'on';
+          } else {
+            hiddenInput.value = 'off';
+          }
+        });
+      });
+    </script>
+{% endblock %}

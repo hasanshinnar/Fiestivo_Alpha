@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    {% block pageCSS %}{% endblock %}
     <style>
        :root {
          --pink: #ff2770;
@@ -37,8 +38,6 @@
        }
 
        /* ── NAV ── */
-       {% block navCSS %}
-
        nav {
          position: fixed; top:0; left:0; right:0; z-index:100;
          background: var(--nav-bg);
@@ -105,10 +104,8 @@
          padding: 7px 18px;
        }
        .nav-links .btn-create:hover { background: var(--pink-dark); }
-      {%endblock%}
-         
-    </style>
-       {%block footerCSS%}
+
+       /* ── FOOTER ── */
        footer {
          background: var(--nav-bg);
          color:rgba(255,255,255,0.5);
@@ -144,47 +141,41 @@
          .cat-grid { grid-template-columns: 1fr 1fr; }
          .section { padding:64px 20px; }
        }
-         {%endblock%}
+    </style>
   </head>
   <body>
-    {%block nav%}
+    {% block nav %}
     <nav>
       <div class="nav-inner">
-        <a class="logo" href="homepage.html">Fiesti<span>vo</span></a>
+        <a class="logo" href="/">Fiesti<span>vo</span></a>
         <div class="search-wrap">
           <input type="text" placeholder="Search events near you…" />
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="nav-links">
-          <a href="homepage.html" class="active"
-            ><i class="fas fa-home"></i> <span class="nav-text">Home</span></a
-          >
-          <a href="categories.html"
-            ><i class="fas fa-compass"></i>
-            <span class="nav-text">Browse</span></a
-          >
-          <a href="creat.html" class="btn-create"
-            ><i class="fas fa-plus"></i>
-            <span class="nav-text">Create Event</span></a
-          >
-          <a href="login.html"
-            ><i class="fas fa-user"></i> <span class="nav-text">Login</span></a
-          >
+          <a href="/" class="active"><i class="fas fa-home"></i> <span class="nav-text">Home</span></a>
+          <a href="/categories"><i class="fas fa-compass"></i> <span class="nav-text">Browse</span></a>
+          <a href="{{ url_for('create_event') }}" class="btn-create"><i class="fas fa-plus"></i> <span class="nav-text">Create Event</span></a>
+          <a href="/login"><i class="fas fa-user"></i> <span class="nav-text">Login</span></a>
         </div>
       </div>
     </nav>
-    {%endblock%} {% block content %} {% endblock %} {%block footer%}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
     <footer>
       <span class="f-logo">Fiesti<span>vo</span></span>
       <div class="f-links">
-        <a href="#">Home</a>
-        <a href="categories.html">Browse Events</a>
-        <a href="creat.html">Create Event</a>
-        <a href="login.html">Login</a>
-        <a href="#">About</a>
+        <a href="{{ url_for('home_page') }}">Home</a>
+        <a href="{{ url_for('create_event') }}">Create Event</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="/categories">Browse Events</a>
+        <a href="/about">About</a>
       </div>
       <p>© 2025 Fiestivo. All rights reserved.</p>
     </footer>
-    {%endblock%}
+    {% endblock %}
   </body>
 </html>

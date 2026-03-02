@@ -1,18 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login – Fiestivo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+{% extends 'base.html' %}
+
+{% block pageCSS %}
     <style>
       :root {
         --pink: #ff2770;
@@ -454,23 +442,25 @@
         }
       }
     </style>
-  </head>
-  <body>
+{% endblock %}
+
+
+{% block content %}
     <nav>
       <div class="nav-inner">
-        <a class="logo" href="homepage.html">Fiesti<span>vo</span></a>
+        <a class="logo" href="{{ url_for('home_page') }}">Fiesti<span>vo</span></a>
         <div class="search-wrap">
           <input type="text" placeholder="Search events near you…" />
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="nav-links">
-          <a href="homepage.html"
+          <a href="{{ url_for('home_page') }}"
             ><i class="fas fa-home"></i> <span>Home</span></a
           >
-          <a href="creat.html" class="btn-create"
+          <a href="{{ url_for('create_event') }}" class="btn-create"
             ><i class="fas fa-plus"></i> Create Event</a
           >
-          <a href="login.html" class="active"
+          <a href="{{ url_for('login') }}" class="active"
             ><i class="fas fa-user"></i> Login</a
           >
         </div>
@@ -626,5 +616,4 @@
         p.type = p.type === "password" ? "text" : "password";
       });
     </script>
-  </body>
-</html>
+{% endblock %}
