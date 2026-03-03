@@ -3,9 +3,9 @@ from main import app
 import psycopg2         
 conn = psycopg2.connect(
     host="localhost",
-    database="Fiestivo",
-    user="postgres",
-    password="hasan"           
+    database="Fiestivo ",
+    user="Hasan",
+    password="medo"           
 )
 cur = conn.cursor()   
 cur.execute('''CREATE TABLE IF NOT EXISTS events (
@@ -20,10 +20,10 @@ cur.execute('''CREATE TABLE IF NOT EXISTS events (
     confirmed_count INTEGER ,
     spots_open INTEGER 
 );''')
-conn.commit()
+
 
 @app.route('/CreateEvent', methods=['POST'])
-def create_event():
+def create_event_post():
     title          = request.form.get('title')
     event_type     = request.form.get('event_type')
     date           = request.form.get('date')
@@ -38,7 +38,8 @@ def create_event():
                 (title, event_type, date, time, venue, area, total_capacity, confirmed_count, spots_open))
     return(redirect(url_for('home_page')))
 
- 
+
 
 cur.close()
+conn.commit()
 conn.close()
