@@ -1,7 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request
-import database
-
-app = Flask(__name__)
+from flask import render_template, redirect, url_for, request
+from Fiestivo import app
+from Fiestivo import database
 
 
 @app.route("/")
@@ -45,7 +44,3 @@ def create_event():
         return redirect(url_for("home_page"))
 
     return render_template("creat.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
