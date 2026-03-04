@@ -24,10 +24,7 @@ def insert_event(data):
     total_capacity INTEGER NOT NULL,
     confirmed_count INTEGER ,
     spots_open INTEGER 
-       );""")
-            cur.execute(
-                """
-                INSERT INTO events 
+       );INSERT INTO events 
                 (title, event_type, date, time, venue, area, total_capacity, confirmed_count, spots_open)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
