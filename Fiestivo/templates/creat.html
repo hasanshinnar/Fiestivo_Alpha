@@ -420,7 +420,6 @@
   </div>
 
   <form action="/CreateEvent" method="post">
-    <!-- EVENT BASICS -->
     <div class="form-section">
       <div class="sec-header">
         <div class="sec-icon"><i class="fas fa-pen"></i></div>
@@ -433,37 +432,22 @@
       <div class="form-row">
         <div class="form-group">
           <label>Event Title *</label>
-          <input type="text" name="title" placeholder="e.g. 5-a-Side at Yarmouk Stadium" required />
+          {{forms.title(class="form-control", placeholder="Give your event a catchy title")}}
         </div>
         <div class="form-group">
           <label>Event Type *</label>
-          <select name="event_type" required>
-            <option value="">Choose category</option>
-            <option value="football">⚽ Football</option>
-            <option value="padel">🎾 Padel</option>
-            <option value="basketball">🏀 Basketball</option>
-            <option value="mafia">🃏 Mafia / Card Games</option>
-            <option value="dinner">🍽️ Hash w Nash (Lunch/Dinner)</option>
-            <option value="chalet">🏖️ Chalet / Pool Day</option>
-            <option value="gaming">🎮 Gaming Night (PlayStation)</option>
-            <option value="hiking">🏔️ Hiking / Nature Trip</option>
-            <option value="roadtrip">🚗 Road Trip</option>
-            <option value="bowling">🎳 Bowling Night</option>
-            <option value="paintball">🎯 Paintball / Laser Tag</option>
-            <option value="cinema">🎬 Cinema Outing</option>
-            <option value="other">Other</option>
-          </select>
+          {{forms.event_type(class="form-control")}}
         </div>
       </div>
 
       <div class="form-row thirds">
         <div class="form-group">
           <label>Event Date *</label>
-          <input type="date" name="date" required />
+          {{forms.date(class="form-control")}}
         </div>
         <div class="form-group">
           <label>Start Time *</label>
-          <input type="time" name="time" required />
+          {{forms.time(class="form-control")}}
         </div>
       </div>
     </div>
@@ -481,12 +465,12 @@
       <div class="form-row">
         <div class="form-group">
           <label>Venue / Address *</label>
-          <input type="text" name="venue" placeholder="Name of venue or full address" required />
+          {{forms.venue(class="form-control", placeholder="e.g. John's Cafe, Central Park, etc.")}}
           <span class="helper">Exact address is hidden from public — only confirmed joiners see it</span>
         </div>
         <div class="form-group">
           <label>Area / Neighborhood *</label>
-          <input type="text" name="area" placeholder="e.g. Yarmouk, Shmeisani, Mecca St." required />
+          {{forms.area(class="form-control", placeholder="e.g. Yarmouk, Shmeisani, Mecca St.", required=True)}}
           <span class="helper">This is what's shown publicly on the event card</span>
         </div>
       </div>
@@ -494,11 +478,11 @@
       <div class="form-row">
         <div class="form-group">
           <label>Total Capacity *</label>
-          <input type="number" name="total_capacity" placeholder="Max total people the venue holds" min="2" required />
+          {{forms.total_capacity(class="form-control", placeholder="Max total people the venue holds", min="2", required=True)}}
         </div>
         <div class="form-group">
           <label>Your Confirmed Headcount *</label>
-          <input type="number" name="confirmed_count" placeholder="People already confirmed from your side" min="1" required />
+          {{forms.confirmed_count(class="form-control", placeholder="People already confirmed from your side", min="1", required=True)}}
         </div>
       </div>
 
@@ -508,7 +492,7 @@
     <!-- ACTIONS -->
     <div class="form-actions">
       <button type="button" class="btn-draft"><i class="fas fa-save"></i> Save Draft</button>
-      <button type="submit" class="btn-publish"><i class="fas fa-paper-plane"></i> Publish Event</button>
+      {{ forms.submit(class="btn-publish") }}
     </div>
   </form>
 </div>
