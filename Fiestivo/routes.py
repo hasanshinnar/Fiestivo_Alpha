@@ -1,6 +1,5 @@
-from flask import render_template, redirect, url_for, request
+from flask import render_template
 from Fiestivo import app
-from Fiestivo import database
 from Fiestivo.forms import EventForm
 
 

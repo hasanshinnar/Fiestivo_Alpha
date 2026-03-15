@@ -1,7 +1,11 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "2f3c1ea789e0b9ea645e6d92"
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 from Fiestivo import database
 from Fiestivo import forms
 from Fiestivo import routes
