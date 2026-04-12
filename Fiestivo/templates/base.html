@@ -5,215 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fiestivo – Find Your People</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      
+    />
+    <link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/base.css') }}"
+/>
     {% block pageCSS %}{% endblock %}
-    <style>
-      :root {
-        --pink: #ff2770;
-        --pink-dark: #d91f5e;
-        --pink-glow: rgba(255, 39, 112, 0.18);
-        --black: #0a0a0a;
-        --nav-bg: #0f0f0f;
-        --card-bg: #f7f5f2;
-        --off-white: #faf9f7;
-        --text-dark: #1a1a1a;
-        --text-muted: #666;
-        --border: rgba(0, 0, 0, 0.08);
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--off-white);
-        color: var(--text-dark);
-        overflow-x: hidden;
-      }
-
-      /* ── NAV ── */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        background: var(--nav-bg);
-        height: 62px;
-        display: flex;
-        align-items: center;
-        padding: 0 32px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .nav-inner {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .logo {
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
-        font-size: 22px;
-        color: #fff;
-        text-decoration: none;
-        letter-spacing: -0.5px;
-        flex-shrink: 0;
-      }
-      .logo span {
-        color: var(--pink);
-      }
-      .search-wrap {
-        flex: 1;
-        max-width: 420px;
-        display: flex;
-        height: 36px;
-      }
-      .search-wrap input {
-        flex: 1;
-        padding: 0 14px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-right: none;
-        border-radius: 8px 0 0 8px;
-        color: #fff;
-        font-size: 13px;
-        font-family: "DM Sans", sans-serif;
-        outline: none;
-        transition: background 0.2s;
-      }
-      .search-wrap input::placeholder {
-        color: rgba(255, 255, 255, 0.35);
-      }
-      .search-wrap input:focus {
-        background: rgba(255, 255, 255, 0.13);
-      }
-      .search-wrap button {
-        padding: 0 16px;
-        background: var(--pink);
-        border: none;
-        border-radius: 0 8px 8px 0;
-        color: #fff;
-        cursor: pointer;
-        font-size: 13px;
-        transition: background 0.2s;
-      }
-      .search-wrap button:hover {
-        background: var(--pink-dark);
-      }
-      .nav-links {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 13.5px;
-        font-weight: 500;
-        padding: 7px 14px;
-        border-radius: 7px;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a:hover {
-        color: #fff;
-        background: rgba(255, 255, 255, 0.07);
-      }
-      .nav-links a.active {
-        color: #fff;
-      }
-      .nav-links .btn-create {
-        background: var(--pink);
-        color: #fff !important;
-        padding: 7px 18px;
-      }
-      .nav-links .btn-create:hover {
-        background: var(--pink-dark);
-      }
-
-      /* ── FOOTER ── */
-      footer {
-        background: var(--nav-bg);
-        color: rgba(255, 255, 255, 0.5);
-        padding: 48px 32px;
-        text-align: center;
-        font-size: 13px;
-      }
-      footer .f-logo {
-        font-family: "Syne", sans-serif;
-        font-size: 20px;
-        font-weight: 800;
-        color: #fff;
-        margin-bottom: 12px;
-        display: block;
-      }
-      footer .f-logo span {
-        color: var(--pink);
-      }
-      footer .f-links {
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-      }
-      footer .f-links a {
-        color: rgba(255, 255, 255, 0.45);
-        text-decoration: none;
-        font-size: 13px;
-      }
-      footer .f-links a:hover {
-        color: var(--pink);
-      }
-
-      /* ── RESPONSIVE ── */
-      @media (max-width: 900px) {
-        .steps-grid {
-          grid-template-columns: 1fr;
-        }
-        .events-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .cat-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 640px) {
-        nav {
-          padding: 0 16px;
-        }
-        .nav-links .nav-text {
-          display: none;
-        }
-        .slide-content {
-          left: 24px;
-          bottom: 160px;
-        }
-        .thumbnails {
-          left: 24px;
-        }
-        .events-grid {
-          grid-template-columns: 1fr;
-        }
-        .cat-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .section {
-          padding: 64px 20px;
-        }
-      }
-    </style>
-  </head>
   <body>
     {% block nav %}
     <nav>
@@ -224,10 +30,20 @@
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="nav-links">
-          <a href="/" class="active"><i class="fas fa-home"></i> <span class="nav-text">Home</span></a>
-          <a href="/categories"><i class="fas fa-compass"></i> <span class="nav-text">Browse</span></a>
-          <a href="{{ url_for('create_event') }}" class="btn-create"><i class="fas fa-plus"></i> <span class="nav-text">Create Event</span></a>
-          <a href="/login"><i class="fas fa-user"></i> <span class="nav-text">Login</span></a>
+          <a href="/" class="active"
+            ><i class="fas fa-home"></i> <span class="nav-text">Home</span></a
+          >
+          <a href="/categories"
+            ><i class="fas fa-compass"></i>
+            <span class="nav-text">Browse</span></a
+          >
+          <a href="{{ url_for('create_event') }}" class="btn-create"
+            ><i class="fas fa-plus"></i>
+            <span class="nav-text">Create Event</span></a
+          >
+          <a href="/login"
+            ><i class="fas fa-user"></i> <span class="nav-text">Login</span></a
+          >
         </div>
       </div>
     </nav>

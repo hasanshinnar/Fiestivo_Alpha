@@ -1,11 +1,13 @@
-FROM python:3.8-slim
+FROM python:3.11-slim
+
+WORKDIR /fiestivo
 
 ENV FLASK_APP=run.py \
        FLASK_ENV=production \
        PYTHONDONTWRITEBYTECODE=1 \
        PYTHONUNBUFFERED=1
        
-WORKDIR /fiestivo
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

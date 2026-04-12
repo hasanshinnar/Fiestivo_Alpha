@@ -1,587 +1,48 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %} {% block pageCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+{% endblock %} {% block content %}
+<nav>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Browse Events – Fiestivo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-      :root {
-        --pink: #ff2770;
-        --pink-dark: #d91f5e;
-        --pink-glow: rgba(255, 39, 112, 0.1);
-        --nav-bg: #0f0f0f;
-        --off-white: #faf9f7;
-        --white: #fff;
-        --text-dark: #1a1a1a;
-        --text-muted: #777;
-        --border: rgba(0, 0, 0, 0.09);
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "DM Sans", sans-serif;
-        background: var(--off-white);
-        color: var(--text-dark);
-      }
-
-      /* NAV */
-      nav {
-        height: 62px;
-        background: var(--nav-bg);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        display: flex;
-        align-items: center;
-        padding: 0 32px;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .nav-inner {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-      }
-      .logo {
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
-        font-size: 22px;
-        color: #fff;
-        text-decoration: none;
-      }
-      .logo span {
-        color: var(--pink);
-      }
-      .search-wrap {
-        flex: 1;
-        max-width: 420px;
-        display: flex;
-        height: 36px;
-      }
-      .search-wrap input {
-        flex: 1;
-        padding: 0 14px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-right: none;
-        border-radius: 8px 0 0 8px;
-        color: #fff;
-        font-size: 13px;
-        font-family: "DM Sans", sans-serif;
-        outline: none;
-      }
-      .search-wrap input::placeholder {
-        color: rgba(255, 255, 255, 0.35);
-      }
-      .search-wrap button {
-        padding: 0 16px;
-        background: var(--pink);
-        border: none;
-        border-radius: 0 8px 8px 0;
-        color: #fff;
-        cursor: pointer;
-        font-size: 13px;
-      }
-      .search-wrap button:hover {
-        background: var(--pink-dark);
-      }
-      .nav-links {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        font-size: 13.5px;
-        font-weight: 500;
-        padding: 7px 14px;
-        border-radius: 7px;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .nav-links a:hover {
-        color: #fff;
-        background: rgba(255, 255, 255, 0.07);
-      }
-      .nav-links a.active {
-        color: var(--pink);
-      }
-      .nav-links .btn-create {
-        background: var(--pink);
-        color: #fff !important;
-      }
-      .nav-links .btn-create:hover {
-        background: var(--pink-dark);
-      }
-
-      /* PAGE HERO */
-      .page-hero {
-        background: var(--nav-bg);
-        padding: 40px 32px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .page-hero-inner {
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      .page-hero h1 {
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
-        font-size: clamp(28px, 3.5vw, 40px);
-        color: #fff;
-        letter-spacing: -0.5px;
-        margin-bottom: 6px;
-      }
-      .page-hero p {
-        color: rgba(255, 255, 255, 0.45);
-        font-size: 14px;
-        margin-bottom: 32px;
-      }
-
-      /* CATEGORY TABS */
-      .cat-tabs {
-        display: flex;
-        gap: 6px;
-        overflow-x: auto;
-        padding-bottom: 0;
-        scrollbar-width: none;
-        flex-wrap: nowrap;
-      }
-      .cat-tabs::-webkit-scrollbar {
-        display: none;
-      }
-      .cat-tab {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        padding: 9px 18px;
-        border-radius: 8px 8px 0 0;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: none;
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 13px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s;
-        white-space: nowrap;
-        font-family: "DM Sans", sans-serif;
-      }
-      .cat-tab:hover {
-        color: #fff;
-        background: rgba(255, 255, 255, 0.1);
-      }
-      .cat-tab.active {
-        background: var(--off-white);
-        color: var(--text-dark);
-        font-weight: 600;
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-      .cat-tab .count {
-        background: rgba(255, 39, 112, 0.2);
-        color: var(--pink);
-        font-size: 10px;
-        font-weight: 700;
-        padding: 1px 6px;
-        border-radius: 5px;
-      }
-      .cat-tab.active .count {
-        background: var(--pink);
-        color: #fff;
-      }
-
-      /* MAIN LAYOUT */
-      .main-layout {
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        gap: 28px;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 32px 32px 80px;
-        align-items: start;
-      }
-
-      /* FILTERS SIDEBAR */
-      .sidebar {
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 24px;
-        position: sticky;
-        top: 90px;
-      }
-      .sidebar-title {
-        font-family: "Syne", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .sidebar-title a {
-        font-family: "DM Sans", sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--pink);
-        text-decoration: none;
-      }
-      .filter-group {
-        margin-bottom: 24px;
-      }
-      .filter-label {
-        font-size: 11px;
-        font-weight: 700;
-        color: var(--text-muted);
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-      }
-
-      .filter-opts {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .filter-opt {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 10px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.15s;
-        font-size: 13.5px;
-        color: var(--text-dark);
-      }
-      .filter-opt:hover {
-        background: #f5f5f5;
-      }
-      .filter-opt input[type="checkbox"] {
-        accent-color: var(--pink);
-        width: 14px;
-        height: 14px;
-      }
-
-      .filter-range {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .filter-range input {
-        flex: 1;
-        padding: 8px 10px;
-        border: 1.5px solid var(--border);
-        border-radius: 8px;
-        font-size: 13px;
-      }
-      .filter-range span {
-        color: var(--text-muted);
-        font-size: 13px;
-      }
-
-      .btn-filter {
-        width: 100%;
-        padding: 11px;
-        background: var(--pink);
-        color: #fff;
-        border: none;
-        border-radius: 9px;
-        font-size: 13.5px;
-        font-weight: 600;
-        cursor: pointer;
-        font-family: "DM Sans", sans-serif;
-        transition: background 0.2s;
-      }
-      .btn-filter:hover {
-        background: var(--pink-dark);
-      }
-
-      /* CONTENT */
-      .content-area {
-      }
-      .content-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      .content-header h2 {
-        font-family: "Syne", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-      }
-      .content-header .count-label {
-        font-size: 13px;
-        color: var(--text-muted);
-        margin-top: 2px;
-      }
-
-      .sort-select {
-        padding: 8px 12px;
-        border: 1.5px solid var(--border);
-        border-radius: 8px;
-        font-size: 13px;
-        font-family: "DM Sans", sans-serif;
-        color: var(--text-dark);
-        background: #fff;
-        outline: none;
-        cursor: pointer;
-      }
-
-      /* EVENT CARDS */
-      .events-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-      .event-card {
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-        transition:
-          box-shadow 0.25s,
-          transform 0.2s;
-        cursor: pointer;
-      }
-      .event-card:hover {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-        transform: translateY(-3px);
-      }
-      .event-card.hidden {
-        display: none;
-      }
-
-      .card-img {
-        height: 160px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 52px;
-        background: #f0eeea;
-      }
-      .card-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: var(--nav-bg);
-        color: #fff;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        padding: 4px 10px;
-        border-radius: 5px;
-      }
-      .demand {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: var(--pink);
-        color: #fff;
-        font-size: 10px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-      }
-      .card-body {
-        padding: 18px;
-      }
-      .card-body h3 {
-        font-family: "Syne", sans-serif;
-        font-size: 15.5px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: var(--text-dark);
-        line-height: 1.3;
-      }
-      .card-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        margin-bottom: 14px;
-      }
-      .card-meta span {
-        font-size: 12.5px;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .card-meta i {
-        color: var(--pink);
-        width: 12px;
-        text-align: center;
-      }
-
-      .host-row {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 14px;
-      }
-      .avatar {
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--pink), #ff6b9d);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 11px;
-        font-weight: 700;
-        color: #fff;
-        flex-shrink: 0;
-      }
-      .host-info {
-        font-size: 12px;
-        color: var(--text-muted);
-      }
-      .host-info b {
-        color: var(--text-dark);
-      }
-      .verified-badge {
-        font-size: 11px;
-        color: var(--pink);
-        margin-left: 4px;
-      }
-
-      .card-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-top: 1px solid var(--border);
-        padding-top: 14px;
-      }
-      .spots-bar {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .spots-label {
-        font-size: 11.5px;
-        color: var(--text-muted);
-      }
-      .spots-label b {
-        color: var(--pink);
-        font-weight: 700;
-      }
-      .progress-bar {
-        width: 100px;
-        height: 4px;
-        background: #eee;
-        border-radius: 2px;
-        overflow: hidden;
-      }
-      .progress-fill {
-        height: 100%;
-        background: var(--pink);
-        border-radius: 2px;
-      }
-
-      .btn-join {
-        padding: 8px 18px;
-        background: var(--pink);
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        font-family: "DM Sans", sans-serif;
-        transition: background 0.2s;
-      }
-      .btn-join:hover {
-        background: var(--pink-dark);
-      }
-      .btn-full {
-        padding: 8px 18px;
-        background: #f5f5f5;
-        color: var(--text-muted);
-        border: none;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: not-allowed;
-        font-family: "DM Sans", sans-serif;
-      }
-
-      /* EMPTY STATE */
-      .empty-state {
-        text-align: center;
-        padding: 80px 20px;
-        color: var(--text-muted);
-        display: none;
-      }
-      .empty-state i {
-        font-size: 48px;
-        color: #ddd;
-        margin-bottom: 16px;
-        display: block;
-      }
-      .empty-state h3 {
-        font-family: "Syne", sans-serif;
-        font-size: 20px;
-        color: var(--text-dark);
-        margin-bottom: 8px;
-      }
-
-      @media (max-width: 1100px) {
-        .main-layout {
-          grid-template-columns: 220px 1fr;
-        }
-        .events-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 768px) {
-        nav {
-          padding: 0 16px;
-        }
-        .page-hero {
-          padding: 32px 20px 0;
-        }
-        .main-layout {
-          grid-template-columns: 1fr;
-          padding: 20px 20px 64px;
-        }
-        .sidebar {
-          position: static;
-        }
-        .events-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/categories.css') }}"
+    />
   </head>
   <body>
     <nav>
       <div class="nav-inner">
         <a class="logo" href="homepage.html">Fiesti<span>vo</span></a>
         <div class="search-wrap">
-          <input type="text" placeholder="Search events near you…" id="searchInput" />
+          <input
+            type="text"
+            placeholder="Search events near you…"
+            id="searchInput"
+          />
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="nav-links">
           <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
-          <a href="categories.html" class="active"><i class="fas fa-compass"></i> Browse</a>
-          <a href="creat.html" class="btn-create"><i class="fas fa-plus"></i> Create</a>
+          <a href="categories.html" class="active"
+            ><i class="fas fa-compass"></i> Browse</a
+          >
+          <a href="creat.html" class="btn-create"
+            ><i class="fas fa-plus"></i> Create</a
+          >
           <a href="login.html"><i class="fas fa-user"></i> Login</a>
         </div>
       </div>
@@ -593,8 +54,12 @@
         <h1>Events in Amman</h1>
         <p>180 open events right now — find one that fits or create your own</p>
         <div class="cat-tabs" id="catTabs">
-          <div class="cat-tab active" data-cat="all"><i class="fas fa-border-all"></i> All <span class="count">180</span></div>
-          <div class="cat-tab" data-cat="football"><i class="fas fa-futbol"></i> Football <span class="count">42</span></div>
+          <div class="cat-tab active" data-cat="all">
+            <i class="fas fa-border-all"></i> All <span class="count">180</span>
+          </div>
+          <div class="cat-tab" data-cat="football">
+            <i class="fas fa-futbol"></i> Football <span class="count">42</span>
+          </div>
           <div class="cat-tab" data-cat="mafia">
             <i class="fas fa-dice"></i> Mafia & Cards
             <span class="count">18</span>
@@ -607,13 +72,19 @@
             <i class="fas fa-swimming-pool"></i> Chalet Day
             <span class="count">11</span>
           </div>
-          <div class="cat-tab" data-cat="hiking"><i class="fas fa-mountain"></i> Hiking <span class="count">9</span></div>
-          <div class="cat-tab" data-cat="gaming"><i class="fas fa-gamepad"></i> Gaming <span class="count">23</span></div>
+          <div class="cat-tab" data-cat="hiking">
+            <i class="fas fa-mountain"></i> Hiking <span class="count">9</span>
+          </div>
+          <div class="cat-tab" data-cat="gaming">
+            <i class="fas fa-gamepad"></i> Gaming <span class="count">23</span>
+          </div>
           <div class="cat-tab" data-cat="padel">
             <i class="fas fa-table-tennis"></i> Padel
             <span class="count">15</span>
           </div>
-          <div class="cat-tab" data-cat="trip"><i class="fas fa-car"></i> Road Trip <span class="count">7</span></div>
+          <div class="cat-tab" data-cat="trip">
+            <i class="fas fa-car"></i> Road Trip <span class="count">7</span>
+          </div>
         </div>
       </div>
     </div>
@@ -622,27 +93,45 @@
     <div class="main-layout">
       <!-- SIDEBAR FILTERS -->
       <aside class="sidebar">
-        <div class="sidebar-title">Filters <a href="#" onclick="clearFilters()">Clear all</a></div>
+        <div class="sidebar-title">
+          Filters <a href="#" onclick="clearFilters()">Clear all</a>
+        </div>
 
         <div class="filter-group">
           <div class="filter-label">When</div>
           <div class="filter-opts">
-            <label class="filter-opt"><input type="checkbox" checked /> Today</label>
-            <label class="filter-opt"><input type="checkbox" /> This week</label>
-            <label class="filter-opt"><input type="checkbox" /> This weekend</label>
-            <label class="filter-opt"><input type="checkbox" /> Next week</label>
+            <label class="filter-opt"
+              ><input type="checkbox" checked /> Today</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> This week</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> This weekend</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> Next week</label
+            >
           </div>
         </div>
 
         <div class="filter-group">
           <div class="filter-label">Area</div>
           <div class="filter-opts">
-            <label class="filter-opt"><input type="checkbox" checked /> All Amman</label>
+            <label class="filter-opt"
+              ><input type="checkbox" checked /> All Amman</label
+            >
             <label class="filter-opt"><input type="checkbox" /> Yarmouk</label>
-            <label class="filter-opt"><input type="checkbox" /> Shmeisani</label>
+            <label class="filter-opt"
+              ><input type="checkbox" /> Shmeisani</label
+            >
             <label class="filter-opt"><input type="checkbox" /> Abdoun</label>
-            <label class="filter-opt"><input type="checkbox" /> Mecca St.</label>
-            <label class="filter-opt"><input type="checkbox" /> Sports City</label>
+            <label class="filter-opt"
+              ><input type="checkbox" /> Mecca St.</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> Sports City</label
+            >
           </div>
         </div>
 
@@ -658,21 +147,33 @@
         <div class="filter-group">
           <div class="filter-label">Who Can Join</div>
           <div class="filter-opts">
-            <label class="filter-opt"><input type="checkbox" checked /> Mixed</label>
-            <label class="filter-opt"><input type="checkbox" /> Males Only</label>
-            <label class="filter-opt"><input type="checkbox" /> Females Only</label>
+            <label class="filter-opt"
+              ><input type="checkbox" checked /> Mixed</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> Males Only</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> Females Only</label
+            >
           </div>
         </div>
 
         <div class="filter-group">
           <div class="filter-label">Host</div>
           <div class="filter-opts">
-            <label class="filter-opt"><input type="checkbox" /> Verified hosts only</label>
-            <label class="filter-opt"><input type="checkbox" /> Rating 4+ only</label>
+            <label class="filter-opt"
+              ><input type="checkbox" /> Verified hosts only</label
+            >
+            <label class="filter-opt"
+              ><input type="checkbox" /> Rating 4+ only</label
+            >
           </div>
         </div>
 
-        <button class="btn-filter"><i class="fas fa-sliders-h"></i> Apply Filters</button>
+        <button class="btn-filter">
+          <i class="fas fa-sliders-h"></i> Apply Filters
+        </button>
       </aside>
 
       <!-- EVENTS -->
@@ -680,7 +181,9 @@
         <div class="content-header">
           <div>
             <h2 id="activeTitle">All Events</h2>
-            <div class="count-label" id="countLabel">Showing 8 of 180 events</div>
+            <div class="count-label" id="countLabel">
+              Showing 8 of 180 events
+            </div>
           </div>
           <select class="sort-select">
             <option>Closest first</option>
@@ -693,7 +196,10 @@
         <div class="events-grid" id="eventsGrid">
           <!-- CARD 1 -->
           <div class="event-card" data-cat="football">
-            <div class="card-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #1a1a2e, #16213e)"
+            >
               ⚽
               <div class="card-badge">Football</div>
               <div class="demand"><i class="fas fa-fire"></i> High Demand</div>
@@ -701,13 +207,21 @@
             <div class="card-body">
               <h3>5-a-Side at Yarmouk Sports Complex</h3>
               <div class="card-meta">
-                <span><i class="fas fa-map-marker-alt"></i> Yarmouk, Amman</span>
-                <span><i class="fas fa-calendar"></i> Tonight · 8:00 PM · 90 min</span>
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Yarmouk, Amman</span
+                >
+                <span
+                  ><i class="fas fa-calendar"></i> Tonight · 8:00 PM · 90
+                  min</span
+                >
                 <span><i class="fas fa-money-bill"></i> Free</span>
               </div>
               <div class="host-row">
                 <div class="avatar">KH</div>
-                <div class="host-info">Hosted by <b>Khalid H.</b> <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.8</div>
+                <div class="host-info">
+                  Hosted by <b>Khalid H.</b>
+                  <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.8
+                </div>
               </div>
               <div class="card-footer">
                 <div class="spots-bar">
@@ -723,20 +237,31 @@
 
           <!-- CARD 2 -->
           <div class="event-card" data-cat="mafia">
-            <div class="card-img" style="background: linear-gradient(135deg, #2d1b3d, #1a0a2e)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #2d1b3d, #1a0a2e)"
+            >
               🃏
               <div class="card-badge">Mafia & Cards</div>
             </div>
             <div class="card-body">
               <h3>Baloot & Mafia Night – Shmeisani</h3>
               <div class="card-meta">
-                <span><i class="fas fa-map-marker-alt"></i> Shmeisani, Amman</span>
-                <span><i class="fas fa-calendar"></i> Friday · 9:00 PM · 3 hrs</span>
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Shmeisani, Amman</span
+                >
+                <span
+                  ><i class="fas fa-calendar"></i> Friday · 9:00 PM · 3
+                  hrs</span
+                >
                 <span><i class="fas fa-money-bill"></i> Free</span>
               </div>
               <div class="host-row">
                 <div class="avatar">AM</div>
-                <div class="host-info">Hosted by <b>Ahmad M.</b> <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.9</div>
+                <div class="host-info">
+                  Hosted by <b>Ahmad M.</b>
+                  <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.9
+                </div>
               </div>
               <div class="card-footer">
                 <div class="spots-bar">
@@ -752,7 +277,10 @@
 
           <!-- CARD 3 -->
           <div class="event-card" data-cat="hiking">
-            <div class="card-img" style="background: linear-gradient(135deg, #1a2e1a, #0a1e0a)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #1a2e1a, #0a1e0a)"
+            >
               🏔️
               <div class="card-badge">Hiking</div>
             </div>
@@ -760,12 +288,18 @@
               <h3>Wadi Rum Morning Hike Group</h3>
               <div class="card-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Wadi Rum</span>
-                <span><i class="fas fa-calendar"></i> Saturday · 6:00 AM · Half day</span>
+                <span
+                  ><i class="fas fa-calendar"></i> Saturday · 6:00 AM · Half
+                  day</span
+                >
                 <span><i class="fas fa-money-bill"></i> 5 JD per person</span>
               </div>
               <div class="host-row">
                 <div class="avatar">SR</div>
-                <div class="host-info">Hosted by <b>Sara R.</b> <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.7</div>
+                <div class="host-info">
+                  Hosted by <b>Sara R.</b>
+                  <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.7
+                </div>
               </div>
               <div class="card-footer">
                 <div class="spots-bar">
@@ -781,7 +315,10 @@
 
           <!-- CARD 4 -->
           <div class="event-card" data-cat="food">
-            <div class="card-img" style="background: linear-gradient(135deg, #2e1a0a, #1e0f0a)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #2e1a0a, #1e0f0a)"
+            >
               🍽️
               <div class="card-badge">Hash w Nash</div>
               <div class="demand"><i class="fas fa-fire"></i> High Demand</div>
@@ -790,12 +327,18 @@
               <h3>Mansaf Lunch – Abdoun Circle Crew</h3>
               <div class="card-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Abdoun, Amman</span>
-                <span><i class="fas fa-calendar"></i> Thursday · 1:30 PM · 2 hrs</span>
+                <span
+                  ><i class="fas fa-calendar"></i> Thursday · 1:30 PM · 2
+                  hrs</span
+                >
                 <span><i class="fas fa-money-bill"></i> 12 JD per person</span>
               </div>
               <div class="host-row">
                 <div class="avatar">OA</div>
-                <div class="host-info">Hosted by <b>Omar A.</b> <i class="fas fa-shield-check verified-badge"></i> ⭐ 5.0</div>
+                <div class="host-info">
+                  Hosted by <b>Omar A.</b>
+                  <i class="fas fa-shield-check verified-badge"></i> ⭐ 5.0
+                </div>
               </div>
               <div class="card-footer">
                 <div class="spots-bar">
@@ -811,15 +354,23 @@
 
           <!-- CARD 5 -->
           <div class="event-card" data-cat="gaming">
-            <div class="card-img" style="background: linear-gradient(135deg, #0a1a2e, #0a0a1e)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #0a1a2e, #0a0a1e)"
+            >
               🎮
               <div class="card-badge">Gaming Night</div>
             </div>
             <div class="card-body">
               <h3>EA FC 25 Tournament Night</h3>
               <div class="card-meta">
-                <span><i class="fas fa-map-marker-alt"></i> Mecca St., Amman</span>
-                <span><i class="fas fa-calendar"></i> Wednesday · 7:00 PM · 4 hrs</span>
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Mecca St., Amman</span
+                >
+                <span
+                  ><i class="fas fa-calendar"></i> Wednesday · 7:00 PM · 4
+                  hrs</span
+                >
                 <span><i class="fas fa-money-bill"></i> 3 JD per person</span>
               </div>
               <div class="host-row">
@@ -840,7 +391,10 @@
 
           <!-- CARD 6 -->
           <div class="event-card" data-cat="chalet">
-            <div class="card-img" style="background: linear-gradient(135deg, #0a1e2e, #0a2030)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #0a1e2e, #0a2030)"
+            >
               🏖️
               <div class="card-badge">Chalet Day</div>
             </div>
@@ -848,18 +402,27 @@
               <h3>Aqaba Chalet Weekend – Split 8 Ways</h3>
               <div class="card-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Aqaba</span>
-                <span><i class="fas fa-calendar"></i> Next Fri–Sat · Full weekend</span>
+                <span
+                  ><i class="fas fa-calendar"></i> Next Fri–Sat · Full
+                  weekend</span
+                >
                 <span><i class="fas fa-money-bill"></i> 35 JD per person</span>
               </div>
               <div class="host-row">
                 <div class="avatar">LK</div>
-                <div class="host-info">Hosted by <b>Lana K.</b> <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.8</div>
+                <div class="host-info">
+                  Hosted by <b>Lana K.</b>
+                  <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.8
+                </div>
               </div>
               <div class="card-footer">
                 <div class="spots-bar">
                   <div class="spots-label"><b>0 spots</b> – Full</div>
                   <div class="progress-bar">
-                    <div class="progress-fill" style="width: 100%; background: #999"></div>
+                    <div
+                      class="progress-fill"
+                      style="width: 100%; background: #999"
+                    ></div>
                   </div>
                 </div>
                 <button class="btn-full" disabled>Full</button>
@@ -869,20 +432,32 @@
 
           <!-- CARD 7 -->
           <div class="event-card" data-cat="padel">
-            <div class="card-img" style="background: linear-gradient(135deg, #1e2a0a, #1a2e10)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #1e2a0a, #1a2e10)"
+            >
               🎾
               <div class="card-badge">Padel</div>
             </div>
             <div class="card-body">
               <h3>Mixed Doubles Padel – Sport City</h3>
               <div class="card-meta">
-                <span><i class="fas fa-map-marker-alt"></i> Sports City, Amman</span>
-                <span><i class="fas fa-calendar"></i> Sunday · 6:00 PM · 1.5 hrs</span>
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Sports City,
+                  Amman</span
+                >
+                <span
+                  ><i class="fas fa-calendar"></i> Sunday · 6:00 PM · 1.5
+                  hrs</span
+                >
                 <span><i class="fas fa-money-bill"></i> 8 JD per person</span>
               </div>
               <div class="host-row">
                 <div class="avatar">RB</div>
-                <div class="host-info">Hosted by <b>Rania B.</b> <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.9</div>
+                <div class="host-info">
+                  Hosted by <b>Rania B.</b>
+                  <i class="fas fa-shield-check verified-badge"></i> ⭐ 4.9
+                </div>
               </div>
               <div class="card-footer">
                 <div class="spots-bar">
@@ -898,15 +473,23 @@
 
           <!-- CARD 8 -->
           <div class="event-card" data-cat="trip">
-            <div class="card-img" style="background: linear-gradient(135deg, #2e2e0a, #1a1a0a)">
+            <div
+              class="card-img"
+              style="background: linear-gradient(135deg, #2e2e0a, #1a1a0a)"
+            >
               🚗
               <div class="card-badge">Road Trip</div>
             </div>
             <div class="card-body">
               <h3>Jerash Day Trip – History & Lunch</h3>
               <div class="card-meta">
-                <span><i class="fas fa-map-marker-alt"></i> Jerash, Jordan</span>
-                <span><i class="fas fa-calendar"></i> Saturday · 9:00 AM · Full day</span>
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Jerash, Jordan</span
+                >
+                <span
+                  ><i class="fas fa-calendar"></i> Saturday · 9:00 AM · Full
+                  day</span
+                >
                 <span><i class="fas fa-money-bill"></i> 15 JD per person</span>
               </div>
               <div class="host-row">
@@ -934,43 +517,7 @@
       </div>
     </div>
 
-    <script>
-      const tabs = document.querySelectorAll(".cat-tab");
-      const cards = document.querySelectorAll(".event-card");
-      const activeTitle = document.getElementById("activeTitle");
-      const countLabel = document.getElementById("countLabel");
-      const emptyState = document.getElementById("emptyState");
-      const grid = document.getElementById("eventsGrid");
-
-      const catNames = {
-        all: "All Events",
-        football: "Football",
-        mafia: "Mafia & Cards",
-        food: "Hash w Nash",
-        chalet: "Chalet Day",
-        hiking: "Hiking",
-        gaming: "Gaming Night",
-        padel: "Padel",
-        trip: "Road Trip",
-      };
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          tabs.forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-          const cat = tab.dataset.cat;
-          let visible = 0;
-          cards.forEach((card) => {
-            const show = cat === "all" || card.dataset.cat === cat;
-            card.classList.toggle("hidden", !show);
-            if (show) visible++;
-          });
-          activeTitle.textContent = catNames[cat] || "Events";
-          countLabel.textContent = `Showing ${visible} event${visible !== 1 ? "s" : ""}`;
-          emptyState.style.display = visible === 0 ? "block" : "none";
-          grid.style.display = visible === 0 ? "none" : "grid";
-        });
-      });
-    </script>
+    <script src="{{ url_for('static', filename='JS/categories.js') }}"></script>
   </body>
 </html>
+{% endblock %}

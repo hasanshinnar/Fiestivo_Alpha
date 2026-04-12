@@ -1,6 +1,6 @@
 from flask import render_template
 from Fiestivo import app
-from Fiestivo.forms import EventForm
+from .forms import EventForm
 
 
 @app.route("/")
@@ -17,4 +17,4 @@ def login():
 def create_event():
     form = EventForm()
 
-    return render_template("creat.html", forms=form)
+    return render_template("create.html", forms=form)

@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% block pageCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/create.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="page">
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <i class="fas fa-chevron-right" style="font-size: 9px"></i>
+      Create Event
+    </div>
+    <h1>Create Your Event</h1>
+    <p>
+      Fill in the details below. The more you share, the more trust you build
+      with potential joiners.
+    </p>
+  </div>
+
+  <!-- STEPS BAR -->
+  <div class="steps-bar">
+    <div class="step-item active">
+      <div class="step-circle">1</div>
+      <div class="step-label">Basics</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">2</div>
+      <div class="step-label">Location</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">3</div>
+      <div class="step-label">Details</div>
+    </div>
+    <div class="step-line"></div>
+    <div class="step-item">
+      <div class="step-circle">4</div>
+      <div class="step-label">Settings</div>
+    </div>
+  </div>
+
+  <form action="/CreateEvent" method="post">
+    <div class="form-section">
+      <div class="sec-header">
+        <div class="sec-icon"><i class="fas fa-pen"></i></div>
+        <div>
+          <div class="sec-title">Event Basics</div>
+          <div class="sec-desc">Name it, type it, time it</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Event Title *</label>
+          {{forms.title(class="form-control", placeholder="Give your event a
+          catchy title")}}
+        </div>
+        <div class="form-group">
+          <label>Event Type *</label>
+          {{forms.event_type(class="form-control")}}
+        </div>
+      </div>
+
+      <div class="form-row thirds">
+        <div class="form-group">
+          <label>Event Date *</label>
+          {{forms.date(class="form-control")}}
+        </div>
+        <div class="form-group">
+          <label>Start Time *</label>
+          {{forms.time(class="form-control")}}
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCATION & HEADCOUNT -->
+    <div class="form-section">
+      <div class="sec-header">
+        <div class="sec-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="sec-title">Location & Headcount</div>
+          <div class="sec-desc">Where, and how many spots are open</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Venue / Address *</label>
+          {{forms.venue(class="form-control", placeholder="e.g. John's Cafe,
+          Central Park, etc.")}}
+          <span class="helper"
+            >Exact address is hidden from public — only confirmed joiners see
+            it</span
+          >
+        </div>
+        <div class="form-group">
+          <label>Area / Neighborhood *</label>
+          {{forms.area(class="form-control", placeholder="e.g. Yarmouk,
+          Shmeisani, Mecca St.", required=True)}}
+          <span class="helper"
+            >This is what's shown publicly on the event card</span
+          >
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Total Capacity *</label>
+          {{forms.total_capacity(class="form-control", placeholder="Max total
+          people the venue holds", min="2", required=True)}}
+        </div>
+        <div class="form-group">
+          <label>Your Confirmed Headcount *</label>
+          {{forms.confirmed_count(class="form-control", placeholder="People
+          already confirmed from your side", min="1", required=True)}}
+        </div>
+      </div>
+
+      <div class="form-row"></div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="form-actions">
+      <button type="button" class="btn-draft">
+        <i class="fas fa-save"></i> Save Draft
+      </button>
+      {{ forms.submit(class="btn-publish") }}
+    </div>
+  </form>
+</div>
+
+<script src="{{ url_for('static', filename='JS/create.js') }}"></script>
+{% endblock %}
