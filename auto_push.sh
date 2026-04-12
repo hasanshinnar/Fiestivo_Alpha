@@ -12,5 +12,5 @@ echo 'Enter the name of the branch:'
 read branch
 
 git push origin $branch
-
+echo 'Push successful! Press Enter to exit.'
 read

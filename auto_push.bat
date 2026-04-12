@@ -1,8 +1,6 @@
 @echo off
-:: %~dp0 gets the Drive and Path of the script file
 set SCRIPT_DIR=%~dp0
 cd /d "%SCRIPT_DIR%"
-:: Check if git is actually installed
 where git >nul 2>nul
 if %errorlevel% neq 0 (
     echo Error: Git is not installed or not in PATH.
