@@ -1,17 +1,13 @@
-{% extends 'base.html' %} {% block pageCSS %}
-
+{% extends 'base.html' %} {% block pageCSS %} {% endblock %} {% block content %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/home.css') }}"
+  href="{{ url_for('static', filename='css/homepage.css') }}"
 />
-
-{% endblock %} {% block content %}
-
 <!-- HERO SLIDER -->
 <section class="slider" id="slider">
   <div class="slide active" data-index="0">
     <img
-      src="{{url_for('static', filename='Images/Home/football.jpg') }}"
+      src="{{url_for('static', filename='images/homepage/football.jpg') }}"
       alt="Football"
     />
     <div class="slide-overlay"></div>
@@ -29,7 +25,7 @@
   </div>
   <div class="slide" data-index="1">
     <img
-      src="{{url_for('static', filename='Images/Home/Card-Games.jpg') }}"
+      src="{{url_for('static', filename='Images/homepage/Card-Games.jpg') }}"
       alt="Game night"
     />
     <div class="slide-overlay"></div>
@@ -47,7 +43,7 @@
   </div>
   <div class="slide" data-index="2">
     <img
-      src="{{url_for('static', filename='Images/Home/BBQ.jpg') }}"
+      src="{{url_for('static', filename='Images/homepage/BBQ.jpg') }}"
       alt="Hash w Nash"
     />
     <div class="slide-overlay"></div>
@@ -65,7 +61,7 @@
   </div>
   <div class="slide" data-index="3">
     <img
-      src="{{url_for('static', filename='Images/Home/Pool-Party.jpg') }}"
+      src="{{url_for('static', filename='Images/homepage/Pool-Party.jpg') }}"
       alt="Chalet"
     />
     <div class="slide-overlay"></div>
@@ -85,28 +81,28 @@
   <div class="thumbnails" id="thumbnails">
     <div class="thumb active" data-index="0">
       <img
-        src="{{url_for('static', filename='Images/Home/football.jpg') }}"
+        src="{{url_for('static', filename='Images/homepage/football.jpg') }}"
         alt="Football"
       />
       <div class="thumb-label">Football</div>
     </div>
     <div class="thumb" data-index="1">
       <img
-        src="{{url_for('static', filename='Images/Home/Card-Games.jpg') }}"
+        src="{{url_for('static', filename='Images/homepage/Card-Games.jpg') }}"
         alt="Games"
       />
       <div class="thumb-label">Games</div>
     </div>
     <div class="thumb" data-index="2">
       <img
-        src="{{url_for('static', filename='Images/Home/BBQ.jpg') }}"
+        src="{{url_for('static', filename='Images/homepage/BBQ.jpg') }}"
         alt="Lunch"
       />
       <div class="thumb-label">Hash w Nash</div>
     </div>
     <div class="thumb" data-index="3">
       <img
-        src="{{url_for('static', filename='Images/Home/Pool-Party.jpg') }}"
+        src="{{url_for('static', filename='Images/homepage/Pool-Party.jpg') }}"
         alt="Chalet"
       />
       <div class="thumb-label">Chalet</div>
@@ -345,5 +341,5 @@
   ></a>
 </section>
 
-<script src="{{ url_for('static', filename='JS/home.js') }}"></script>
+<script src="{{ url_for('static', filename='js/homepage.JS') }}"></script>
 {% endblock %}
