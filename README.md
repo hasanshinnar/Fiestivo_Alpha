@@ -1,6 +1,7 @@
 # Fiestivo Alpha
 
 **A learning project by Hasan Shinnar and Hamza Sweedan**
+**The code is still under maintenance at the moment **
 
 ---
 
@@ -28,11 +29,13 @@ Clone the repository and follow the setup instructions for your platform.
 After making changes, you can auto-push using the provided scripts:
 
 **Windows**
+
 ```
 auto_push.bat
 ```
 
 **Linux**
+
 ```bash
 chmod +x auto_push.sh   # run once to make it executable
 ./auto_push.sh
@@ -53,4 +56,4 @@ This is an active learning project and is continuously evolving. Expect rough ed
 
 ---
 
-*Fiestivo Alpha is a test application built for learning purposes.*
+_Fiestivo Alpha is a test application built for learning purposes._

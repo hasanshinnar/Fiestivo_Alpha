@@ -44,7 +44,7 @@
             ><i class="fas fa-compass"></i>
             <span class="nav-text">Browse</span></a
           >
-          <a href="{{ url_for('create_event') }}" class="btn-create"
+          <a href="{{ url_for('page.create_event') }}" class="btn-create"
             ><i class="fas fa-plus"></i>
             <span class="nav-text">Create Event</span></a
           >
@@ -58,9 +58,9 @@
     <footer>
       <span class="f-logo">Fiesti<span>vo</span></span>
       <div class="f-links">
-        <a href="{{ url_for('home_page') }}">Home</a>
-        <a href="{{ url_for('create_event') }}">Create Event</a>
-        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('page.home_page') }}">Home</a>
+        <a href="{{ url_for('page.create_event') }}">Create Event</a>
+        <a href="{{ url_for('page.login') }}">Login</a>
         <a href="/categories">Browse Events</a>
         <a href="/about">About</a>
       </div>
