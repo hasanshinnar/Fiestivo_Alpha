@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block pageCSS %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/login.css') }}"
+  href="{{ url_for('static', filename='style/login.css') }}"
 />
 {% endblock %} {% block content %}
 <nav>
@@ -138,5 +138,5 @@
     </div>
   </div>
 </div>
-<script src="{{ url_for('static', filename='JS/login.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block pageCSS %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/homepage.css') }}"
+  href="{{ url_for('static', filename='style/homepage.css') }}"
 />
 {% endblock %} {% block content %}
 
@@ -343,5 +343,5 @@
   ></a>
 </section>
 
-<script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/homepage.js') }}"></script>
 {% endblock %}

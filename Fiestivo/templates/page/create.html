@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block pageCSS %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/create.css') }}"
+  href="{{ url_for('static', filename='style/create.css') }}"
 />
 {% endblock %} {% block content %}
 <div class="page">
@@ -131,5 +131,5 @@
   </form>
 </div>
 
-<script src="{{ url_for('static', filename='JS/create.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/create.js') }}"></script>
 {% endblock %}

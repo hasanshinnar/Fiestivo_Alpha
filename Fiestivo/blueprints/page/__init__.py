@@ -1,10 +1,12 @@
-# from Fiestivo.blueprints.page.routes import page
 from flask import Flask
-
 from .routes import page
 
 
 def create_app():
-    app = Flask(__name__, template_folder="templates")
+    import os
+
+    template_dir = os.path.abspath("Fiestivo/templates")
+    app = Flask(__name__, template_folder=template_dir)
+    app.config["SECRET_KEY"] = "your-secret-key"
     app.register_blueprint(page)
     return app
