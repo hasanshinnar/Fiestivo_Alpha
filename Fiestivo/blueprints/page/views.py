@@ -3,7 +3,7 @@ from .forms import EventForm
 import os
 
 # template_dir = os.path.abspath("Fiestivo/templates")
-page = Blueprint("page", __name__)
+page = Blueprint("page", __name__, template_folder="templates")
 
 
 @page.route("/")

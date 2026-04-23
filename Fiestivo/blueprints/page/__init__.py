@@ -1,5 +1,5 @@
 from flask import Flask
-from .routes import page
+from .views import page
 
 
 def create_app():
