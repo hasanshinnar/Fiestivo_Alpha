@@ -1,12 +1,12 @@
-from flask import Flask
-from .views import page
+from flask import Flask, Blueprint
+
+page = Blueprint("page", __name__, template_folder="templates", static_folder="static")
 
 
 def create_app():
-    import os
+    app = Flask(__name__)
+    from . import views
 
-    template_dir = os.path.abspath("Fiestivo/templates")
-    app = Flask(__name__, template_folder=template_dir)
-    app.config["SECRET_KEY"] = "your-secret-key"
     app.register_blueprint(page)
+
     return app

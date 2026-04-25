@@ -1,9 +1,7 @@
 from flask import Blueprint, render_template
 from .forms import EventForm
 import os
-
-# template_dir = os.path.abspath("Fiestivo/templates")
-page = Blueprint("page", __name__, template_folder="templates")
+from . import page
 
 
 @page.route("/")

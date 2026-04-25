@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block pageCSS %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='style/homepage.css') }}"
+  href="{{ url_for('page.static', filename='style/homepage.css') }}"
 />
 {% endblock %} {% block content %}
 
@@ -9,7 +9,7 @@
 <section class="slider" id="slider">
   <div class="slide active" data-index="0">
     <img
-      src="{{url_for('static', filename='images/homepage/football.jpg') }}"
+      src="{{url_for('page.static', filename='images/homepage/football.jpg') }}"
       alt="Football"
     />
     <div class="slide-overlay"></div>
@@ -27,7 +27,7 @@
   </div>
   <div class="slide" data-index="1">
     <img
-      src="{{url_for('static', filename='images/homepage/Card-Games.jpg') }}"
+      src="{{url_for('page.static', filename='images/homepage/Card-Games.jpg') }}"
       alt="Game night"
     />
     <div class="slide-overlay"></div>
@@ -63,7 +63,7 @@
   </div>
   <div class="slide" data-index="3">
     <img
-      src="{{url_for('static', filename='images/homepage/Pool-Party.jpg') }}"
+      src="{{url_for('page.static', filename='images/homepage/Pool-Party.jpg') }}"
       alt="Chalet"
     />
     <div class="slide-overlay"></div>
@@ -338,10 +338,10 @@
 <section class="cta-section">
   <h2>Got an event in mind?</h2>
   <p>Post it in minutes. Let verified people join. Make it happen.</p>
-  <a href="{{ url_for('create_event') }}" class="btn-white"
+  <a href="{{ url_for('page.create_event') }}" class="btn-white"
     >Create Your Event <i class="fas fa-arrow-right"></i
   ></a>
 </section>
 
-<script src="{{ url_for('static', filename='scripts/homepage.js') }}"></script>
+<script src="{{ url_for('page.static', filename='scripts/homepage.js') }}"></script>
 {% endblock %}
