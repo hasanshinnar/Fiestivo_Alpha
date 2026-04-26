@@ -1,6 +1,20 @@
-flask 
-flask_wtf
-psycopg2
-requests==2.31.0
-python-dotenv==1.0.1
+# Web Framework & Forms
+Flask==3.1.3
+flask_wtf==1.0.1
+WTForms==3.2.1
+
+# Database
+psycopg2-binary==2.9.6
+
+# Environment & Utilities
+python-dotenv==1.2.2
+requests==2.32.5
+
+# Email Services
+Flask-Mail==0.10.0
+mailtrap==2.5.0
+resend==2.29.0
+
+# Data Validation
+pydantic==2.13.3
 ## just run " python -m pip install -r requirements.txt " in terminal 

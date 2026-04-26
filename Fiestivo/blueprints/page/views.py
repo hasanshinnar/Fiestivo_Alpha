@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template
+from flask import render_template, request
+from .contact import send_contact_email
 from .forms import EventForm
-import os
 from . import page
 
 
@@ -18,3 +18,11 @@ def login():
 def create_event():
     form = EventForm()
     return render_template("page/create.html", forms=form)
+
+
+@page.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+
+        send_contact_email()
+    return render_template("page/contact.html")

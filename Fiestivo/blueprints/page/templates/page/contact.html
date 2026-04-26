@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block pageCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('page.static', filename='style/contact.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="{{ url_for('page.home_page') }}">
+      Fiesti<span>vo</span>
+    </a>
+
+    <div class="search-wrap">
+      <input type="text" placeholder="Search events near you…" />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="nav-links">
+      <a href="{{ url_for('page.home_page') }}">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </a>
+      <a href="{{ url_for('page.create_event') }}" class="btn-create">
+        <i class="fas fa-plus"></i> Create Event
+      </a>
+      <a href="{{ url_for('page.login') }}">
+        <i class="fas fa-user"></i> Login
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <div class="left-content">
+      <div class="left-tag">
+        <i class="fas fa-headset"></i> We're here for you
+      </div>
+
+      <h2 class="left-heading">
+        Got a<br /><span>question?</span><br />Let's talk
+      </h2>
+
+      <p class="left-desc">
+        Whether it's a bug, a partnership idea, or just a question about how
+        Fiestivo works — we read every message and get back within 24 hours.
+      </p>
+    </div>
+
+    <div class="contact-info">
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <p class="info-label">Email us</p>
+          <p class="info-value">hello@fiestivo.com</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <p class="info-label">Based in</p>
+          <p class="info-value">Amman, Jordan</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <p class="info-label">Response time</p>
+          <p class="info-value">Within 24 hours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ✅ LEFT PANEL CLOSED -->
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+    <div class="form-box">
+      <h2>Send us a message</h2>
+      <p class="sub">Fill in the form and we'll get back to you shortly.</p>
+
+      <div class="success-banner" id="successBanner">
+        <i class="fas fa-check-circle"></i>
+        Message sent! We'll be in touch soon.
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="fields-row">
+          <div class="field">
+            <label class="field-label">First Name</label>
+            <input type="text" id="firstName" placeholder="First name" />
+            <i class="fas fa-user field-icon"></i>
+          </div>
+
+          <div class="field">
+            <label class="field-label">Last Name</label>
+            <input type="text" id="lastName" placeholder="Last name" />
+            <i class="fas fa-user field-icon"></i>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" />
+          <i class="fas fa-envelope field-icon"></i>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Subject</label>
+          <div class="select-wrap">
+            <select id="subject">
+              <option value="" disabled selected>Choose a topic…</option>
+              <option value="bug">Report a bug</option>
+              <option value="feature">Feature request</option>
+              <option value="partnership">Partnership / collab</option>
+              <option value="account">Account issue</option>
+              <option value="other">Something else</option>
+            </select>
+            <i class="fas fa-chevron-down select-icon"></i>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Tell us what's on your mind…"
+          ></textarea>
+          <span class="char-count" id="charCount">0 / 500</span>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span><i class="fas fa-paper-plane"></i> Send Message</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

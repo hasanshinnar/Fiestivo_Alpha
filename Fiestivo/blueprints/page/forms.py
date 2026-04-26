@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from . import app
 from wtforms import (
     StringField,
     IntegerField,
@@ -8,6 +9,8 @@ from wtforms import (
     SelectField,
 )
 from wtforms.validators import DataRequired, NumberRange
+from flask import Flask
+from flask_mail import Mail
 
 
 class EventForm(FlaskForm):
@@ -45,3 +48,24 @@ class EventForm(FlaskForm):
         label="Confirmed Count", validators=[NumberRange(min=0)]
     )
     submit = SubmitField(label="Create Event")
+
+
+class ContactForm(FlaskForm):
+    mail = Mail(app)
+    first_name = StringField(label="First Name", validators=[DataRequired()])
+    last_name = StringField(label="Last Name", validators=[DataRequired()])
+    email = StringField(label="Email", validators=[DataRequired()])
+    subject = SelectField(
+        label="Subject",
+        validators=[DataRequired()],
+        choices=[
+            ("", "Choose topic"),
+            ("Report a bug", "Report a bug"),
+            ("Feature request", "Feature request"),
+            ("Partnership / collaboration", "Partnership / collaboration"),
+            ("Account issue", "Account issue"),
+            ("Something else", "Something else"),
+        ],
+    )
+    message = StringField(label="Message", validators=[DataRequired()])
+    submit = SubmitField(label="Send Message")
