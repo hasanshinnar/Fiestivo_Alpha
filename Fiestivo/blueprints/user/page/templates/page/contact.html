@@ -5,6 +5,31 @@
 />
 {% endblock %} {% block content %}
 
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="{{ url_for('page.home_page') }}">
+      Fiesti<span>vo</span>
+    </a>
+
+    <div class="search-wrap">
+      <input type="text" placeholder="Search events near you…" />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="nav-links">
+      <a href="{{ url_for('page.home_page') }}">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </a>
+      <a href="{{ url_for('page.create_event') }}" class="btn-create">
+        <i class="fas fa-plus"></i> Create Event
+      </a>
+      <a href="{{ url_for('page.login') }}">
+        <i class="fas fa-user"></i> Login
+      </a>
+    </div>
+  </div>
+</nav>
+
 <div class="page">
   <!-- LEFT PANEL -->
   <div class="left-panel">

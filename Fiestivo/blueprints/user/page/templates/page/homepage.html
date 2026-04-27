@@ -1,0 +1,347 @@
+{% extends 'base.html' %} {% block pageCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('user.static', filename='style/homepage.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<!-- HERO SLIDER -->
+<section class="slider" id="slider">
+  <div class="slide active" data-index="0">
+    <img
+      src="{{url_for('user.static', filename='images/homepage/football.jpg') }}"
+      alt="Football"
+    />
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">Sports</span>
+      <h2>Fill Your Team,<br />Own The Field</h2>
+      <p>
+        Short 3 players for your football match? Post it and let other players
+        join you tonight.
+      </p>
+      <a href="categories.html" class="slide-cta"
+        ><i class="fas fa-search"></i> Browse Events</a
+      >
+    </div>
+  </div>
+  <div class="slide" data-index="1">
+    <img
+      src="{{url_for('user.static', filename='images/homepage/Card-Games.jpg') }}"
+      alt="Game night"
+    />
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">Game Night</span>
+      <h2>Mafia Night,<br />Who's In?</h2>
+      <p>
+        The best card and party game nights in Amman — find a table or host your
+        own.
+      </p>
+      <a href="categories.html" class="slide-cta"
+        ><i class="fas fa-search"></i> Browse Events</a
+      >
+    </div>
+  </div>
+  <div class="slide" data-index="2">
+    <img
+      src="{{url_for('static', filename='images/homepage/BBQ.jpg') }}"
+      alt="Hash w Nash"
+    />
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">Hash w Nash</span>
+      <h2>Good Food,<br />Better People</h2>
+      <p>
+        Join a group lunch outing or create yours — Fiestivo makes it easy to
+        split, share, and enjoy.
+      </p>
+      <a href="categories.html" class="slide-cta"
+        ><i class="fas fa-search"></i> Browse Events</a
+      >
+    </div>
+  </div>
+  <div class="slide" data-index="3">
+    <img
+      src="{{url_for('user.static', filename='images/homepage/Pool-Party.jpg') }}"
+      alt="Chalet"
+    />
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">Chalet Days</span>
+      <h2>Book It,<br />Fill It, Enjoy It</h2>
+      <p>
+        Booked a chalet but need more people to split the cost? Fiestivo gets
+        you covered.
+      </p>
+      <a href="categories.html" class="slide-cta"
+        ><i class="fas fa-search"></i> Browse Events</a
+      >
+    </div>
+  </div>
+
+  <div class="thumbnails" id="thumbnails">
+    <div class="thumb active" data-index="0">
+      <img
+        src="{{url_for('static', filename='images/homepage/football.jpg') }}"
+        alt="Football"
+      />
+      <div class="thumb-label">Football</div>
+    </div>
+    <div class="thumb" data-index="1">
+      <img
+        src="{{url_for('static', filename='images/homepage/Card-Games.jpg') }}"
+        alt="Games"
+      />
+      <div class="thumb-label">Games</div>
+    </div>
+    <div class="thumb" data-index="2">
+      <img
+        src="{{url_for('static', filename='images/homepage/BBQ.jpg') }}"
+        alt="Lunch"
+      />
+      <div class="thumb-label">Hash w Nash</div>
+    </div>
+    <div class="thumb" data-index="3">
+      <img
+        src="{{url_for('static', filename='images/homepage/Pool-Party.jpg') }}"
+        alt="Chalet"
+      />
+      <div class="thumb-label">Chalet</div>
+    </div>
+  </div>
+
+  <div class="slide-counter" id="dots">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+    <div class="dot" data-index="3"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">From idea to outing<br />in minutes</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon"><i class="fas fa-store"></i></div>
+        <h3>Book a Venue</h3>
+        <p>
+          Browse our vendor marketplace and book football fields, chalets,
+          gaming rooms, and more — all in one place with confirmed availability.
+        </p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon"><i class="fas fa-calendar-plus"></i></div>
+        <h3>Create Your Event</h3>
+        <p>
+          Your booking automatically creates an event. Add details, set the
+          number of open spots, and publish — it takes under 2 minutes.
+        </p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon"><i class="fas fa-users"></i></div>
+        <h3>Find Your People</h3>
+        <p>
+          Other verified users request to join. You approve who comes. Ratings
+          and trust scores make it easy to pick the right crew.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED EVENTS -->
+<section class="section" style="padding-top: 0">
+  <div class="section-inner">
+    <div class="events-header">
+      <div>
+        <p class="section-label">Open Now</p>
+        <h2 class="section-title" style="margin-bottom: 0">
+          Events happening near you
+        </h2>
+      </div>
+      <a href="categories.html"
+        >See all events <i class="fas fa-arrow-right"></i
+      ></a>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <div
+          class="event-img"
+          style="
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+          "
+        >
+          ⚽
+        </div>
+        <div class="event-badge">Football</div>
+        <div class="demand-badge"><i class="fas fa-fire"></i> High Demand</div>
+        <div class="event-body">
+          <h3>5-a-Side at Yarmouk Sports Complex</h3>
+          <div class="event-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Yarmouk, Amman</span>
+            <span><i class="fas fa-calendar"></i> Tonight · 8:00 PM</span>
+            <span
+              ><i class="fas fa-user-check"></i> Verified host · ⭐ 4.8</span
+            >
+          </div>
+          <div class="event-footer">
+            <div class="spots"><b>3 spots</b> left of 10</div>
+            <button class="btn-join">Request to Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div
+          class="event-img"
+          style="
+            background: linear-gradient(135deg, #2d1b3d, #1a0a2e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+          "
+        >
+          🃏
+        </div>
+        <div class="event-badge">Mafia Night</div>
+        <div class="event-body">
+          <h3>Baloot & Mafia Night – Shmeisani</h3>
+          <div class="event-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Shmeisani, Amman</span>
+            <span><i class="fas fa-calendar"></i> Friday · 9:00 PM</span>
+            <span
+              ><i class="fas fa-user-check"></i> Verified host · ⭐ 4.9</span
+            >
+          </div>
+          <div class="event-footer">
+            <div class="spots"><b>5 spots</b> left of 12</div>
+            <button class="btn-join">Request to Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div
+          class="event-img"
+          style="
+            background: linear-gradient(135deg, #1a2e1a, #0a1e0a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+          "
+        >
+          🏔️
+        </div>
+        <div class="event-badge">Hiking</div>
+        <div class="event-body">
+          <h3>Wadi Rum Morning Hike Group</h3>
+          <div class="event-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Wadi Rum</span>
+            <span><i class="fas fa-calendar"></i> Saturday · 6:00 AM</span>
+            <span
+              ><i class="fas fa-user-check"></i> Verified host · ⭐ 4.7</span
+            >
+          </div>
+          <div class="event-footer">
+            <div class="spots"><b>8 spots</b> left of 15</div>
+            <button class="btn-join">Request to Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <div class="section-inner">
+    <p class="section-label" style="color: rgba(255, 255, 255, 0.5)">
+      Browse by Type
+    </p>
+    <h2 class="section-title" style="color: #fff; margin-bottom: 32px">
+      What are you into?
+    </h2>
+    <div class="cat-grid">
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-futbol"></i></div>
+        <div class="cat-info">
+          <h4>Football</h4>
+          <span>42 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-dice"></i></div>
+        <div class="cat-info">
+          <h4>Mafia & Cards</h4>
+          <span>18 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-utensils"></i></div>
+        <div class="cat-info">
+          <h4>Hash w Nash</h4>
+          <span>29 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-swimming-pool"></i></div>
+        <div class="cat-info">
+          <h4>Chalet Day</h4>
+          <span>11 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-mountain"></i></div>
+        <div class="cat-info">
+          <h4>Hiking</h4>
+          <span>9 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-gamepad"></i></div>
+        <div class="cat-info">
+          <h4>Gaming Night</h4>
+          <span>23 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-table-tennis"></i></div>
+        <div class="cat-info">
+          <h4>Padel</h4>
+          <span>15 open events</span>
+        </div>
+      </a>
+      <a href="categories.html" class="cat-card">
+        <div class="cat-icon"><i class="fas fa-car"></i></div>
+        <div class="cat-info">
+          <h4>Road Trip</h4>
+          <span>7 open events</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Got an event in mind?</h2>
+  <p>Post it in minutes. Let verified people join. Make it happen.</p>
+  <a href="{{ url_for('user.create_event') }}" class="btn-white"
+    >Create Your Event <i class="fas fa-arrow-right"></i
+  ></a>
+</section>
+
+<script src="{{ url_for('user.static', filename='scripts/homepage.js') }}"></script>
+{% endblock %}

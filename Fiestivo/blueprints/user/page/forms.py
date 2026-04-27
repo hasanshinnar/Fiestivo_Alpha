@@ -1,5 +1,4 @@
 from flask_wtf import FlaskForm
-from .database import Users
 from . import app
 from wtforms import (
     StringField,
@@ -8,15 +7,8 @@ from wtforms import (
     TimeField,
     SubmitField,
     SelectField,
-    PasswordField,
 )
-from wtforms.validators import (
-    DataRequired,
-    NumberRange,
-    InputRequired,
-    Length,
-    ValidationError,
-)
+from wtforms.validators import DataRequired, NumberRange
 from flask import Flask
 from flask_mail import Mail
 
@@ -77,49 +69,3 @@ class ContactForm(FlaskForm):
     )
     message = StringField(label="Message", validators=[DataRequired()])
     submit = SubmitField(label="Send Message")
-
-
-class LoginForm(FlaskForm):
-    email = StringField(label="Email", validators=[DataRequired()])
-    username = StringField(label="Username", validators=[DataRequired()])
-    password = PasswordField(label="Password", validators=[DataRequired()])
-    submit = SubmitField(label="Login")
-
-
-class RegistrationForm(FlaskForm):
-    full_name = StringField(
-        label="Full Name",
-        validators=[DataRequired(), Length(min=2, max=50)],
-        render_kw={"placeholder": "Full Name"},
-    )
-    username = StringField(
-        label="Username",
-        validators=[DataRequired(), Length(min=2, max=20)],
-        render_kw={"placeholder": "Username"},
-    )
-    email = StringField(
-        label="Email", validators=[DataRequired()], render_kw={"placeholder": "Email"}
-    )
-    password = PasswordField(
-        label="Password",
-        validators=[
-            DataRequired(),
-            Length(min=6, max=20),
-        ],
-        render_kw={"placeholder": "Password"},
-    )
-    submit = SubmitField(label="Create Account")
-
-    def validate_email(self, email):
-        existing_user = Users.query.filter_by(email=email.data).first()
-        if existing_user:
-            raise ValidationError(
-                "This email is already registered. Please choose a different one."
-            )
-
-    def validate_username(self, username):
-        existing_user = Users.query.filter_by(username=username.data).first()
-        if existing_user:
-            raise ValidationError(
-                "This username is already taken. Please choose a different one."
-            )

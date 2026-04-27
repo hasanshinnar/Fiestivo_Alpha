@@ -4,29 +4,7 @@
   href="{{ url_for('static', filename='style/login.css') }}"
 />
 {% endblock %} {% block content %}
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="{{ url_for('home_page') }}">Fiesti<span>vo</span></a>
-    <div class="search-wrap">
-      <input type="text" placeholder="Search events near you…" />
-      <button><i class="fas fa-search"></i></button>
-    </div>
-    <div class="nav-links">
-      <a href="{{ url_for('home_page') }}"
-        ><i class="fas fa-home"></i> <span>Home</span></a
-      >
-      <a href="{{ url_for('create_event') }}" class="btn-create"
-        ><i class="fas fa-plus"></i> Create Event</a
-      >
-      <a href="{{ url_for('login') }}" class="active"
-        ><i class="fas fa-user"></i> Login</a
-      >
-    </div>
-  </div>
-</nav>
-
 <div class="page">
-  <!-- LEFT -->
   <div class="left-panel">
     <div class="left-content">
       <div class="left-tag">
@@ -60,69 +38,85 @@
     </div>
   </div>
 
-  <!-- RIGHT -->
   <div class="right-panel">
     <div class="form-box">
-      <!-- LOGIN -->
       <div class="login-panel" id="loginPanel">
         <h2>Welcome back</h2>
         <p class="sub">
-          Don't have an account?
-          <a href="#" id="toRegister">Sign up here</a>
+          Don't have an account? <a href="#" id="toRegister">Sign up here</a>
         </p>
 
-        <div class="field">
-          <label class="field-label">Username</label>
-          <input type="text" placeholder="Your username" />
-          <i class="fas fa-user field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Password</label>
-          <input type="password" placeholder="Your password" id="loginPass" />
-          <i
-            class="fas fa-eye field-icon"
-            id="toggleLogin"
-            style="cursor: pointer"
-          ></i>
-        </div>
-        <div class="forgot"><a href="#">Forgot password?</a></div>
-        <button class="btn-submit">Log In</button>
+        <form method="POST" action="{{ url_for('page.login') }}">
+          {{ login_form.hidden_tag() }}
+          <input type="hidden" name="form_type" value="login" />
+
+          <div class="field">
+            <label class="field-label">Username</label>
+            {{ login_form.username(placeholder="Your username") }}
+            <i class="fas fa-user field-icon"></i>
+          </div>
+
+          <div class="field">
+            <label class="field-label">Password</label>
+            {{ login_form.password(placeholder="Your password") }}
+            <i
+              class="fas fa-eye field-icon"
+              id="toggleLogin"
+              style="cursor: pointer"
+            ></i>
+          </div>
+
+          <div class="forgot"><a href="#">Forgot password?</a></div>
+          {{ login_form.submit(class="btn-publish") }}
+        </form>
       </div>
 
-      <!-- REGISTER -->
       <div class="register-panel" id="registerPanel">
         <h2>Create account</h2>
         <p class="sub">
           Already have one? <a href="#" id="toLogin">Log in here</a>
         </p>
 
-        <div class="field">
-          <label class="field-label">Full Name</label>
-          <input type="text" placeholder="Your full name" />
-          <i class="fas fa-user field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Username</label>
-          <input type="text" placeholder="Choose a username" />
-          <i class="fas fa-at field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Email</label>
-          <input type="email" placeholder="your@email.com" />
-          <i class="fas fa-envelope field-icon"></i>
-        </div>
-        <div class="field">
-          <label class="field-label">Password</label>
-          <input type="password" placeholder="Create a password" id="regPass" />
-          <i
-            class="fas fa-eye field-icon"
-            id="toggleReg"
-            style="cursor: pointer"
-          ></i>
-        </div>
-        <button class="btn-submit" style="margin-bottom: 20px">
-          Create Account
-        </button>
+        <form method="POST" action="{{ url_for('page.login') }}">
+          {{ reg_form.hidden_tag() }}
+          <input type="hidden" name="form_type" value="register" />
+
+          <div class="field">
+            <label class="field-label">Full Name</label>
+            {{ reg_form.full_name(placeholder="Your full name") }}
+            <i class="fas fa-user field-icon"></i>
+          </div>
+
+          <div class="field">
+            <label class="field-label">Username</label>
+            {{ reg_form.username(placeholder="Choose a username")}}
+            <i class="fas fa-at field-icon"></i>
+          </div>
+
+          <div class="field">
+            <label class="field-label">Email</label>
+            {{ reg_form.email(placeholder="What's your Email?")}}
+            <i class="fas fa-envelope field-icon"></i>
+          </div>
+
+          <div class="field">
+            <label class="field-label">Password</label>
+            {{ reg_form.password(placeholder="Your password") }}
+            <i
+              class="fas fa-eye field-icon"
+              id="toggleReg"
+              style="cursor: pointer"
+            ></i>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-submit"
+            style="margin-bottom: 20px; width: 100%"
+          >
+            Create Account
+          </button>
+        </form>
 
         <div class="divider">or boost your profile</div>
 

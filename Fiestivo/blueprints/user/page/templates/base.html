@@ -21,7 +21,7 @@
 
     <link
       rel="stylesheet"
-      href="{{ url_for('page.static', filename='style/base.css') }}"
+      href="{{ url_for('user.static', filename='style/base.css') }}"
     />
     {% block pageCSS %} {% endblock %}
   </head>
@@ -34,20 +34,20 @@
           <button><i class="fas fa-search"></i></button>
         </div>
         <div class="nav-links">
-          <a href="{{ url_for('page.home_page') }}" class="active"
+          <a href="/" class="active"
             ><i class="fas fa-home"></i> <span class="nav-text">Home</span></a
           >
-          <a href="{{ url_for('page.browse_events') }}"
+          <a href="/categories"
             ><i class="fas fa-compass"></i>
             <span class="nav-text">Browse</span></a
           >
-          <a href="{{ url_for('page.create_event') }}" class="btn-create"
+          <a href="{{ url_for('user.create_event') }}" class="btn-create"
             ><i class="fas fa-plus"></i>
             <span class="nav-text">Create Event</span></a
           >
-          <a href="{{ url_for('page.login') }}"
-            ><i class="fas fa-user"></i> <span class="nav-text">Login</span></a
-          >
+          <a href="{{ url_for('user.user_page') }}">
+            <i class="fas fa-user"></i> <span class="nav-text">User</span>
+          </a>
         </div>
       </div>
     </nav>
@@ -55,12 +55,11 @@
     <footer>
       <span class="f-logo">Fiesti<span>vo</span></span>
       <div class="f-links">
-        <a href="{{ url_for('page.home_page') }}">Home</a>
-        <a href="{{ url_for('page.create_event') }}">Create Event</a>
-        <a href="{{ url_for('page.login') }}">Login</a>
-        <a href="{{ url_for('page.browse_events') }}">Browse Events</a>
-        <a>About</a>
-        <a href="{{ url_for('page.contact') }}">Contact Us</a>
+        <a href="{{ url_for('user.home_page') }}">Home</a>
+        <a href="{{ url_for('user.create_event') }}">Create Event</a>
+        <a href="{{ url_for('user.browse_events') }}">Browse Events</a>
+        <a href="{{ url_for('user.about') }}">About</a>
+        <a href="{{ url_for('user.contact') }}">Contact Us</a>
       </div>
       <p class="text-muted">Fiestivo &copy; 2026</p>
     </footer>
