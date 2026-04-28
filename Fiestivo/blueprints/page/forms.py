@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from .database import Users
+from .database import User
 from . import app
 from wtforms import (
     StringField,
@@ -111,14 +111,14 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField(label="Create Account")
 
     def validate_email(self, email):
-        existing_user = Users.query.filter_by(email=email.data).first()
+        existing_user = User.query.filter_by(email=email.data).first()
         if existing_user:
             raise ValidationError(
                 "This email is already registered. Please choose a different one."
             )
 
     def validate_username(self, username):
-        existing_user = Users.query.filter_by(username=username.data).first()
+        existing_user = User.query.filter_by(username=username.data).first()
         if existing_user:
             raise ValidationError(
                 "This username is already taken. Please choose a different one."

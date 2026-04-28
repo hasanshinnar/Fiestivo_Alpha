@@ -2,7 +2,7 @@ import os
 from flask import Flask, Blueprint
 from flask_login import LoginManager
 from dotenv import load_dotenv
-from .database import Users, db
+from .database import User, db
 from .contact import mail
 
 login_manager = LoginManager()
@@ -30,7 +30,7 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(user_id):
-        return Users.query.get(int(user_id))
+        return User.query.get(int(user_id))
 
     from . import views
 

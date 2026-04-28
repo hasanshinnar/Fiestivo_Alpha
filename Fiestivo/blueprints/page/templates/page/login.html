@@ -49,7 +49,6 @@
         <form method="POST" action="{{ url_for('page.login') }}">
           {{ login_form.hidden_tag() }}
           <input type="hidden" name="form_type" value="login" />
-
           <div class="field">
             <label class="field-label">Username</label>
             {{ login_form.username(placeholder="Your username") }}
@@ -114,7 +113,10 @@
             class="btn-submit"
             style="margin-bottom: 20px; width: 100%"
           >
-            Create Account
+            {% with messages = get_flashed_messages() %} {% if messages %} {%
+            for message in messages %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %} {% endif %} {% endwith %} Create Account
           </button>
         </form>
 

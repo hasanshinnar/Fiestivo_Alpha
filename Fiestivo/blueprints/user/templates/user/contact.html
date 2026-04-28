@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block pageCSS %}
 <link
   rel="stylesheet"
-  href="{{ url_for('page.static', filename='style/contact.css') }}"
+  href="{{ url_for('user.static', filename='style/contact.css') }}"
 />
 {% endblock %} {% block content %}
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="{{ url_for('page.home_page') }}">
+    <a class="logo" href="{{ url_for('user.home_user') }}">
       Fiesti<span>vo</span>
     </a>
 
@@ -17,13 +17,13 @@
     </div>
 
     <div class="nav-links">
-      <a href="{{ url_for('page.home_page') }}">
+      <a href="{{ url_for('user.home_page') }}">
         <i class="fas fa-home"></i> <span>Home</span>
       </a>
-      <a href="{{ url_for('page.create_event') }}" class="btn-create">
+      <a href="{{ url_for('user.create_event') }}" class="btn-create">
         <i class="fas fa-plus"></i> Create Event
       </a>
-      <a href="{{ url_for('page.login') }}">
+      <a href="{{ url_for('user.login') }}">
         <i class="fas fa-user"></i> Login
       </a>
     </div>

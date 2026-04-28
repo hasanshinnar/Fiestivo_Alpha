@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block pageCSS %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='style/user.css') }}"
+  href="{{ url_for('static', filename='style/dashboard.css') }}"
 />
 {% endblock %}{% block content %}
 <html lang="en">
@@ -632,7 +632,7 @@
       </main>
     </div>
   </body>
-  <script src="{{ url_for('user.static', filename='scripts/user.js') }}"></script>
+  <script src="{{ url_for('user.static', filename='scripts/dashboard.js') }}"></script>
 
   {% endblock %}
 </html>

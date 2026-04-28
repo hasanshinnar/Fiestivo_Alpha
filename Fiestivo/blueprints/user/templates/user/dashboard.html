@@ -1,0 +1,638 @@
+{% extends 'base.html' %} {% block pageCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='style/dashboard.css') }}"
+/>
+{% endblock %}{% block content %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiestivo – Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a class="logo" href="#">Fiesti<span>vo</span></a>
+        <div class="search-wrap">
+          <input type="text" placeholder="Search events near you…" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-links">
+          <a href="#"><i class="fas fa-home"></i> <span>Home</span></a>
+          <a href="#" class="btn-create"
+            ><i class="fas fa-plus"></i> Create Event</a
+          >
+          <a href="#" class="active"><i class="fas fa-user"></i> Profile</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PAGE -->
+    <div class="page">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <!-- Profile Card -->
+        <div class="profile-card">
+          <div class="profile-banner">
+            <button class="edit-banner-btn">
+              <i class="fas fa-camera"></i> Edit Cover
+            </button>
+          </div>
+
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar">S</div>
+            <div class="verified-badge">
+              <i class="fas fa-check" style="font-size: 8px"></i>
+            </div>
+            <div class="avatar-edit"><i class="fas fa-camera"></i></div>
+          </div>
+
+          <div class="profile-info">
+            <div class="profile-name-row">
+              <span class="profile-name">Sara Al-Rasheed</span>
+              <span class="trust-badge">+Trust</span>
+            </div>
+            <div class="profile-handle">@sara.rasheed · Amman, JO</div>
+            <p class="profile-bio">
+              Event lover & occasional host 🎉 Always down for rooftop dinners,
+              hiking, and jazz nights. Find me where the good people are.
+            </p>
+            <div class="profile-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt"></i> Amman, Jordan
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i> Joined March 2024
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-star"></i> 4.8 host rating · 23 reviews
+              </div>
+            </div>
+            <div class="profile-stats-row">
+              <div class="pstat">
+                <div class="pstat-num">12<span></span></div>
+                <div class="pstat-label">Hosted</div>
+              </div>
+              <div class="pstat">
+                <div class="pstat-num">38<span></span></div>
+                <div class="pstat-label">Attended</div>
+              </div>
+              <div class="pstat">
+                <div class="pstat-num">94<span>%</span></div>
+                <div class="pstat-label">Fill rate</div>
+              </div>
+            </div>
+            <button class="btn-edit-profile">
+              <i class="fas fa-pen"></i> Edit Profile
+            </button>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="sidebar-card">
+          <h4>Interests</h4>
+          <div class="interest-tags">
+            <span class="tag active">🎵 Music</span>
+            <span class="tag active">🏕️ Outdoors</span>
+            <span class="tag active">🍕 Food</span>
+            <span class="tag">🎨 Art</span>
+            <span class="tag active">🎬 Film</span>
+            <span class="tag">🏋️ Fitness</span>
+            <span class="tag">📚 Books</span>
+            <span class="tag active">🌙 Night Out</span>
+          </div>
+        </div>
+
+        <!-- Friends -->
+        <div class="sidebar-card">
+          <h4>People you know</h4>
+          <div class="friends-list">
+            <div class="friend-row">
+              <div
+                class="friend-avatar"
+                style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+              >
+                K
+              </div>
+              <div class="friend-info">
+                <div class="friend-name">Kareem Mansour</div>
+                <div class="friend-handle">@kareem.m</div>
+              </div>
+              <button class="friend-follow following">Following</button>
+            </div>
+            <div class="friend-row">
+              <div
+                class="friend-avatar"
+                style="background: linear-gradient(135deg, #f59e0b, #ef4444)"
+              >
+                L
+              </div>
+              <div class="friend-info">
+                <div class="friend-name">Lana Khalil</div>
+                <div class="friend-handle">@lana.k</div>
+              </div>
+              <button class="friend-follow">Follow</button>
+            </div>
+            <div class="friend-row">
+              <div
+                class="friend-avatar"
+                style="background: linear-gradient(135deg, #10b981, #0891b2)"
+              >
+                T
+              </div>
+              <div class="friend-info">
+                <div class="friend-name">Tarek Nour</div>
+                <div class="friend-handle">@tarek.nour</div>
+              </div>
+              <button class="friend-follow following">Following</button>
+            </div>
+            <div class="friend-row">
+              <div
+                class="friend-avatar"
+                style="background: linear-gradient(135deg, #ec4899, #f43f5e)"
+              >
+                R
+              </div>
+              <div class="friend-info">
+                <div class="friend-name">Rima Haddad</div>
+                <div class="friend-handle">@rimah</div>
+              </div>
+              <button class="friend-follow">Follow</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <!-- Tabs -->
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="events">
+            <i class="fas fa-calendar-alt"></i> My Events
+            <span class="badge">12</span>
+          </button>
+          <button class="tab-btn" data-tab="reviews">
+            <i class="fas fa-star"></i> Reviews <span class="badge">23</span>
+          </button>
+          <button class="tab-btn" data-tab="activity">
+            <i class="fas fa-bolt"></i> Activity
+          </button>
+        </div>
+
+        <!-- EVENTS TAB -->
+        <div class="tab-panel active" id="tab-events">
+          <!-- Hosting -->
+          <div class="section-header">
+            <span class="section-title">Hosting</span>
+            <button class="section-action">
+              <i class="fas fa-plus"></i> Create new
+            </button>
+          </div>
+          <div class="events-grid" style="margin-bottom: 28px">
+            <div class="event-card">
+              <div class="event-thumb">
+                <div
+                  class="event-thumb-bg"
+                  style="background: linear-gradient(135deg, #1a0812, #2d0a1a)"
+                >
+                  🎵
+                </div>
+                <div class="event-date-chip">
+                  <div class="day">18</div>
+                  <div class="mon">Jul</div>
+                </div>
+                <div class="event-status-chip chip-hosting">Hosting</div>
+              </div>
+              <div class="event-body">
+                <div class="event-name">Rooftop Jazz Night</div>
+                <div class="event-loc">
+                  <i class="fas fa-map-marker-alt"></i> Abdali, Amman
+                </div>
+                <div class="event-footer">
+                  <div style="display: flex; align-items: center">
+                    <div class="attendee-pips">
+                      <div class="pip" style="background: #6366f1">K</div>
+                      <div class="pip" style="background: #f59e0b">L</div>
+                      <div class="pip" style="background: #10b981">T</div>
+                    </div>
+                    <span class="pip-count">+9 going</span>
+                  </div>
+                  <span class="event-cat">Music</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-thumb">
+                <div
+                  class="event-thumb-bg"
+                  style="background: linear-gradient(135deg, #0a1520, #0a2010)"
+                >
+                  🏕️
+                </div>
+                <div class="event-date-chip">
+                  <div class="day">24</div>
+                  <div class="mon">Jul</div>
+                </div>
+                <div class="event-status-chip chip-hosting">Hosting</div>
+              </div>
+              <div class="event-body">
+                <div class="event-name">Hiking Trip – Dead Sea Trail</div>
+                <div class="event-loc">
+                  <i class="fas fa-map-marker-alt"></i> Dead Sea, JO
+                </div>
+                <div class="event-footer">
+                  <div style="display: flex; align-items: center">
+                    <div class="attendee-pips">
+                      <div class="pip" style="background: #ec4899">R</div>
+                      <div class="pip" style="background: #6366f1">K</div>
+                    </div>
+                    <span class="pip-count">+4 going</span>
+                  </div>
+                  <span class="event-cat">Outdoors</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attending -->
+          <div class="section-header">
+            <span class="section-title">Attending</span>
+            <a class="section-action" href="#"
+              >View all <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="events-grid" style="margin-bottom: 28px">
+            <div class="event-card">
+              <div class="event-thumb">
+                <div
+                  class="event-thumb-bg"
+                  style="background: linear-gradient(135deg, #1a1400, #201800)"
+                >
+                  🍕
+                </div>
+                <div class="event-date-chip">
+                  <div class="day">20</div>
+                  <div class="mon">Jul</div>
+                </div>
+                <div class="event-status-chip chip-going">Going</div>
+              </div>
+              <div class="event-body">
+                <div class="event-name">Italian Food Crawl</div>
+                <div class="event-loc">
+                  <i class="fas fa-map-marker-alt"></i> Rainbow St, Amman
+                </div>
+                <div class="event-footer">
+                  <div style="display: flex; align-items: center">
+                    <div class="attendee-pips">
+                      <div class="pip" style="background: #f59e0b">L</div>
+                      <div class="pip" style="background: #10b981">T</div>
+                      <div class="pip" style="background: #6366f1">K</div>
+                    </div>
+                    <span class="pip-count">+14 going</span>
+                  </div>
+                  <span class="event-cat">Food</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-card">
+              <div class="event-thumb">
+                <div
+                  class="event-thumb-bg"
+                  style="background: linear-gradient(135deg, #0d001a, #1a000d)"
+                >
+                  🎬
+                </div>
+                <div class="event-date-chip">
+                  <div class="day">22</div>
+                  <div class="mon">Jul</div>
+                </div>
+                <div class="event-status-chip chip-going">Going</div>
+              </div>
+              <div class="event-body">
+                <div class="event-name">Open-Air Cinema Night</div>
+                <div class="event-loc">
+                  <i class="fas fa-map-marker-alt"></i> Jabal Amman
+                </div>
+                <div class="event-footer">
+                  <div style="display: flex; align-items: center">
+                    <div class="attendee-pips">
+                      <div class="pip" style="background: #ec4899">R</div>
+                      <div class="pip" style="background: #f59e0b">L</div>
+                    </div>
+                    <span class="pip-count">+21 going</span>
+                  </div>
+                  <span class="event-cat">Film</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Past -->
+          <div class="section-header">
+            <span class="section-title">Past Events</span>
+            <a class="section-action" href="#"
+              >See history <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="events-grid">
+            <div class="event-card" style="opacity: 0.65">
+              <div class="event-thumb">
+                <div
+                  class="event-thumb-bg"
+                  style="background: linear-gradient(135deg, #111, #1a1a1a)"
+                >
+                  🎨
+                </div>
+                <div class="event-date-chip">
+                  <div class="day">02</div>
+                  <div class="mon">Jun</div>
+                </div>
+                <div class="event-status-chip chip-past">Past</div>
+              </div>
+              <div class="event-body">
+                <div class="event-name">Art Gallery Meetup</div>
+                <div class="event-loc">
+                  <i class="fas fa-map-marker-alt"></i> Downtown Amman
+                </div>
+                <div class="event-footer">
+                  <span style="font-size: 11px; color: var(--text-muted)"
+                    >18 attended</span
+                  >
+                  <span class="event-cat">Art</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-card" style="opacity: 0.65">
+              <div class="event-thumb">
+                <div
+                  class="event-thumb-bg"
+                  style="background: linear-gradient(135deg, #0a1218, #0a1810)"
+                >
+                  🌙
+                </div>
+                <div class="event-date-chip">
+                  <div class="day">15</div>
+                  <div class="mon">May</div>
+                </div>
+                <div class="event-status-chip chip-past">Past</div>
+              </div>
+              <div class="event-body">
+                <div class="event-name">Night Walk – Jabal Al Weibdeh</div>
+                <div class="event-loc">
+                  <i class="fas fa-map-marker-alt"></i> Weibdeh, Amman
+                </div>
+                <div class="event-footer">
+                  <span style="font-size: 11px; color: var(--text-muted)"
+                    >11 attended</span
+                  >
+                  <span class="event-cat">Night Out</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVIEWS TAB -->
+        <div class="tab-panel" id="tab-reviews">
+          <div class="reviews-summary">
+            <div class="big-rating">
+              <div class="big-num">4.8</div>
+              <div class="stars-row">★★★★★</div>
+              <div class="rating-count">Based on 23 reviews</div>
+            </div>
+            <div class="bar-rows">
+              <div class="bar-row">
+                <span class="bar-label">5</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 78%"></div>
+                </div>
+                <span class="bar-pct">78%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">4</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 17%"></div>
+                </div>
+                <span class="bar-pct">17%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">3</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 5%"></div>
+                </div>
+                <span class="bar-pct">5%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">2</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="bar-pct">0%</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">1</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 0%"></div>
+                </div>
+                <span class="bar-pct">0%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-list">
+            <div class="review-item">
+              <div class="review-header">
+                <div
+                  class="review-avatar"
+                  style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"
+                >
+                  K
+                </div>
+                <div class="review-meta">
+                  <div class="review-name">Kareem Mansour</div>
+                  <div class="review-event">Rooftop Jazz Night · June 2024</div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <p class="review-text">
+                Sara is an incredible host — she made sure everyone felt
+                included from the moment they arrived. The rooftop setting was
+                perfect and the playlist was 10/10. Would join again without
+                hesitation.
+              </p>
+            </div>
+
+            <div class="review-item">
+              <div class="review-header">
+                <div
+                  class="review-avatar"
+                  style="background: linear-gradient(135deg, #f59e0b, #ef4444)"
+                >
+                  L
+                </div>
+                <div class="review-meta">
+                  <div class="review-name">Lana Khalil</div>
+                  <div class="review-event">Italian Food Crawl · May 2024</div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <p class="review-text">
+                Best food event I've been to. Sara researched every spot in
+                advance and had a whole plan ready. The group vibe was warm and
+                the pasta was unreal. Already waiting for the next one.
+              </p>
+            </div>
+
+            <div class="review-item">
+              <div class="review-header">
+                <div
+                  class="review-avatar"
+                  style="background: linear-gradient(135deg, #10b981, #0891b2)"
+                >
+                  T
+                </div>
+                <div class="review-meta">
+                  <div class="review-name">Tarek Nour</div>
+                  <div class="review-event">
+                    Art Gallery Meetup · April 2024
+                  </div>
+                </div>
+                <div class="review-stars">
+                  ★★★★<span style="color: rgba(255, 255, 255, 0.2)">★</span>
+                </div>
+              </div>
+              <p class="review-text">
+                Really well organized. The gallery was a great pick and Sara
+                kept things moving without it feeling rushed. Only minor thing —
+                we could've used a bit more time at the last room. Overall great
+                experience!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVITY TAB -->
+        <div class="tab-panel" id="tab-activity">
+          <div class="activity-feed">
+            <div class="activity-item">
+              <div class="notif-dot"></div>
+              <div
+                class="activity-icon"
+                style="background: rgba(255, 39, 112, 0.12); color: var(--pink)"
+              >
+                <i class="fas fa-calendar-plus"></i>
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  <strong>Kareem Mansour</strong> joined your event
+                  <strong>Rooftop Jazz Night</strong>
+                </div>
+                <div class="activity-time">2 hours ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="notif-dot"></div>
+              <div
+                class="activity-icon"
+                style="background: rgba(245, 158, 11, 0.12); color: #f59e0b"
+              >
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  <strong>Lana Khalil</strong> left you a
+                  <strong>5-star review</strong> on Italian Food Crawl
+                </div>
+                <div class="activity-time">5 hours ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div
+                class="activity-icon"
+                style="background: rgba(99, 102, 241, 0.12); color: #6366f1"
+              >
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  <strong>Rima Haddad</strong> started following you
+                </div>
+                <div class="activity-time">1 day ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div
+                class="activity-icon"
+                style="background: rgba(16, 185, 129, 0.12); color: #10b981"
+              >
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  Your event <strong>Hiking Trip – Dead Sea Trail</strong> is
+                  now <strong>fully booked</strong>
+                </div>
+                <div class="activity-time">2 days ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div
+                class="activity-icon"
+                style="background: rgba(255, 39, 112, 0.12); color: var(--pink)"
+              >
+                <i class="fas fa-ticket-alt"></i>
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  You joined <strong>Open-Air Cinema Night</strong> hosted by
+                  Tarek Nour
+                </div>
+                <div class="activity-time">3 days ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div
+                class="activity-icon"
+                style="
+                  background: rgba(255, 255, 255, 0.06);
+                  color: rgba(255, 255, 255, 0.4);
+                "
+              >
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="activity-content">
+                <div class="activity-text">
+                  Your identity was <strong>verified</strong> — Trust Score
+                  updated
+                </div>
+                <div class="activity-time">1 week ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="{{ url_for('user.static', filename='scripts/dashboard.js') }}"></script>
+
+  {% endblock %}
+</html>
