@@ -15,6 +15,13 @@ SQLALCHEMY_DATABASE_URI = db_uri
 SECRET_KEY = os.getenv("DB_SECRET_KEY")
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+SQLALCHEMY_ENGINE_OPTIONS = {
+    "pool_size": 10,
+    "pool_recycle": 3600,
+    "pool_pre_ping": True,
+    "max_overflow": 20,
+}
+
 
 # User
 SEED_ADMIN_EMAIL = os.getenv("SEED_ADMIN_EMAIL")

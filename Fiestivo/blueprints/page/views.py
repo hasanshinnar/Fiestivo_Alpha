@@ -1,16 +1,18 @@
 import bcrypt
 from flask import render_template, request, redirect, url_for, flash
-from flask_login import login_required, login_user
+from flask_login import login_required, login_user , current_user
 from flask_bcrypt import Bcrypt
 from .contact import send_contact_email
 from .database import User
 from .forms import EventForm, LoginForm, RegistrationForm
 from . import page
-
+from flask_caching import Cache
+cache = Cache(config={'CACHE_TYPE': 'simple'})
 bcrypt = Bcrypt()
 
 
 @page.route("/")
+@cache.cached(timeout=300)
 def home_page():
     return render_template("page/homepage.html")
 
@@ -68,17 +70,18 @@ def login():
                 user.password, login_form.password.data
             ):
                 login_user(user)
-                return redirect(url_for(f"/{User.query.first().username}"))
+                return redirect(url_for('page.dashboard', username=current_user.username))
             else:
                 flash("Invalid credentials.")
 
     return render_template("page/login.html", login_form=login_form, reg_form=reg_form)
 
 
-@page.route(f"/{User.query.first().username}")
+@@page.route("/<username>")
 @login_required
-def dashboard():
+def dashboard(username):
     return render_template("page/dashboard.html")
+
 
 
 @page.route("/CreateEvent")

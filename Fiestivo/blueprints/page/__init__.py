@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from dotenv import load_dotenv
 from .database import User, db
 from .contact import mail
+from flask_talisman import Talisman
 
 login_manager = LoginManager()
 page = Blueprint("page", __name__, template_folder="templates", static_folder="static")
@@ -27,6 +28,16 @@ def create_app():
     mail.init_app(app)
     login_manager.init_app(app)
     login_manager.login_view = "page.login"
+
+    if not app.debug:
+        Talisman(app, force_https=True)
+
+    @app.after_request
+    def set_security_headers(response):
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "SAMEORIGIN"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        return response
 
     @login_manager.user_loader
     def load_user(user_id):

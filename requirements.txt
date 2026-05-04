@@ -25,4 +25,10 @@ sqlalchemy_utils == 0.41.0
 # Debugging & Development
 flask_debugtoolbar == 0.16.0
 celery == 5.3.0
+flask_talisman == 1.0.1
+
+# Deployment 
+gunicorn==21.2.0
+Flask-Caching==1.10.0
+
 ## just run " python -m pip install -r requirements.txt " in terminal 
