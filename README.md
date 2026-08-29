@@ -1,7 +1,7 @@
-# Fiestivo Alpha
+# Fiestivo
 
-**A learning project by Hasan Shinnar and Hamza Sweedan**
-**The code is still under maintenance at the moment **
+**A project by Hasan Shinnar and Hamza Sweedan**
+**The code is still under maintenance at the moment. **
 
 ---
 
